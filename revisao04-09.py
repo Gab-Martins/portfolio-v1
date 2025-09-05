@@ -14,14 +14,14 @@
 # Imagine que uma pessoa decidiu guardar R$50 por mês durante 12 meses.
 # O objetivo é mostrar quanto ela terá acumulado ao final de cada mês.
 
-for mes in range(1, 13):
+for mes in range(1, 13): # pyright: ignore[reportUndefinedVariable]
     saldo = mes*50
-    print(f"Mês {mes} = R$ {saldo}")
+    print(f"Mês {mes} = R$ {saldo}") # type: ignore
 
 mes = 1
 saldo = 0
 
 while mes < 13:
     saldo += 50
-    print(f"Mês {mes}, saldo R$ {saldo}")
+    print(f"Mês {mes}, saldo R$ {saldo}") # pyright: ignore[reportUndefinedVariable]
     mes += 1
