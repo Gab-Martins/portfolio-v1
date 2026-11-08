@@ -46,6 +46,10 @@ input[type=checkbox]{width:24px;height:24px;accent-color:var(--accent);margin:0}
 nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(255,255,255,.94);border-top:2px solid var(--line);border-radius:22px 22px 0 0;padding-bottom:env(safe-area-inset-bottom);z-index:10;box-shadow:0 -6px 18px rgba(255,127,168,.15)}
 nav button{flex:1;border:0;background:none;color:var(--mute);padding:12px 4px;font:inherit;font-size:13px}
 nav button.on{color:var(--accent);font-weight:700}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:9px 2px;border-bottom:1px dashed var(--line);font-size:15px}
+.chk:last-child{border-bottom:0}
+.chk.on span{text-decoration:line-through;opacity:.5}
+.chk input{flex:0 0 auto;margin-top:1px}
 </style>
 </head>
 <body>
@@ -60,6 +64,7 @@ nav button.on{color:var(--accent);font-weight:700}
   <button data-v="day" class="on">By day</button>
   <button data-v="cat">By category</button>
   <button data-v="book">To book</button>
+  <button data-v="check">Checklist</button>
 </nav>
 
 <script>
@@ -217,6 +222,56 @@ const TOBOOK=[
  {w:'6. No booking needed',n:'Niagara fireworks + Festival of Lights (Sat 14)',x:'Free. Dates not officially confirmed.',u:'https://www.niagaraparks.com/events/event/niagara-falls-fireworks-series',l:'Niagara Parks'},
  {w:'6. No booking needed',n:'Korean BBQ with Rizwana (Tue 10)',x:'Rizwana picks and books. Keep the evening open.'},
 ];
+const CHECK=[
+ {g:'📄 Documents',i:[
+  'Passport valid for the whole trip (check the expiry date)',
+  'Canada entry authorization: eTA or visa, whichever applies to you (apply online, do it well before 9 Nov)',
+  'Boarding passes / online check-in done (opens ~24 h before)',
+  'Flight details: Rio → Montréal → Toronto (9 Nov, connection 8:45–10:10) and Toronto → Rio (19 Nov, 23:55)',
+  'Hotel confirmations: Sheraton Centre (9–14) and Samesun Kensington (14–19)',
+  'Summit registration / agenda (qualicareevents.com/agenda)',
+  'Travel insurance policy number saved offline',
+  'Copies of passport + confirmations in email or cloud, and one on paper']},
+ {g:'🎟 Tickets & bookings',i:[
+  'CityPASS bought and the My CityPASS app installed',
+  'CityPASS slots: CN Tower + Ripley\'s (Wed 11), Casa Loma (Sun 15), AGO (Wed 18)',
+  'Slow Pulp ticket (Mon 16)',
+  'Operation Mincemeat ticket (Wed 18)',
+  'Power Station at Night time slot (Sat 14), and check the GO train times',
+  'ROM free timed ticket (Tue 17)',
+  'Canoe sunset-drink reservation (Wed 18) · Richmond Station if you want it',
+  'Screenshots of every ticket saved on the phone (works offline)']},
+ {g:'💳 Money & phone',i:[
+  'Credit/debit card works abroad; tell your bank you are travelling',
+  'Some Canadian dollars in cash (small amounts) · most places take cards and tap',
+  'Phone plan: roaming or an eSIM for Canada',
+  'Offline map of Toronto in Google Maps',
+  'Apps: My CityPASS, Uber, TTC/Presto or tap-to-pay, airline app',
+  'Power bank (in carry-on, not checked)',
+  'Plug adapter: Canada uses type A/B plugs, 120 V (check your chargers handle it)']},
+ {g:'🧳 Packing',i:[
+  'Winter layers: November in Toronto is cold, about 0–8 °C, can be wet',
+  'Warm coat, scarf, gloves, hat, waterproof shoes you can walk in all day',
+  'Cocktail attire for the Gala & Awards dinner (Fri 13)',
+  'Smart-casual outfit for Canoe (Wed 18)',
+  'Work: laptop, charger, headphones (working Tue 10 and Wed 11)',
+  'Medications in original packaging + prescriptions',
+  'Liquids over 100 ml go in the checked bag, none in carry-on',
+  'Leave room in the bag for gifts · maple syrup and ice wine need a checked bag',
+  'Phone charger + cable in the carry-on',
+  'Reusable bag for shopping']},
+ {g:'✈ Day of the flight (Mon 9)',i:[
+  'Documents, phone, wallet and charger in the carry-on',
+  'Bag tagged to Toronto at the first check-in (the Montréal connection needs a re-check, see the plan)',
+  'Know the UP Express plan: Pearson → Union, then walk or Line 1 to Osgoode',
+  'Call the Sheraton about holding bags before 15:00 check-in']},
+ {g:'🏠 Before leaving Toronto (Thu 19)',i:[
+  'Check out of Samesun and drop the bags, or ask to keep them until the afternoon',
+  'Purchases within the Brazil customs allowance: US$1,000 by air, 12 L of alcohol (confirm in the Receita Federal Guia do Viajante)',
+  'Keep receipts for what you bought',
+  'Be at Pearson about 3 h before the 23:55 flight',
+  'Online check-in for the return flight']},
+];
 const CAUTIONS=[
  'Brazil customs: US$1,000 purchase allowance by air, 12 L of alcohol. Confirm in the Receita Federal Guia do Viajante.',
  'Carry-on only: maple syrup and ice wine need a checked bag.',
@@ -265,6 +320,14 @@ function render(){
     let out='',last=null;
     items.slice().sort((a,b)=>(a.d||99)-(b.d||99)).forEach(i=>{if(i.d!==last){out+=`<div class="group">${dayLabel(i.d)}</div>`;last=i.d}out+=card(i,false)});
     m.innerHTML=out||'<p class="sub">Nothing here.</p>';
+  }else if(view==='check'){
+    let tot=0,dn=0;
+    CHECK.forEach(g=>g.i.forEach(t=>{tot++;if(done['chk|'+t])dn++;}));
+    let out=`<div class="warn" id="prog">💗 ${dn} of ${tot} done. This list is general advice; confirm entry rules and allowances with the official sources.</div>`;
+    CHECK.forEach(g=>{
+      out+=`<div class="group">${g.g}</div><div class="card">`+g.i.map(t=>{const k='chk|'+t;return `<label class="chk ${done[k]?'on':''}"><input type="checkbox" ${done[k]?'checked':''} data-k="${esc(k)}" data-chk="1"><span>${esc(t)}</span></label>`}).join('')+`</div>`;
+    });
+    m.innerHTML=out;
   }else{
     let out=CAUTIONS.map(c=>`<div class="warn">${esc(c)}</div>`).join(''),last='';
     TOBOOK.forEach(b=>{
@@ -287,7 +350,7 @@ document.addEventListener('click',e=>{
 });
 document.addEventListener('change',e=>{
   const k=e.target.dataset&&e.target.dataset.k;if(k===undefined)return;
-  if(e.target.checked)done[k]=1;else delete done[k];save();e.target.closest('.card').classList.toggle('done',e.target.checked);
+  if(e.target.checked)done[k]=1;else delete done[k];save();if(e.target.dataset.chk){e.target.closest('.chk').classList.toggle('on',e.target.checked);render();}else e.target.closest('.card').classList.toggle('done',e.target.checked);
 });
 // start on today's trip day if within the trip, else the first day
 const today=new Date();
