@@ -4,50 +4,53 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Toronto Trip</title>
+<meta name="theme-color" content="#fffdf2">
 <style>
-:root{--bg:#faf7f2;--card:#fff;--ink:#1f2430;--mute:#6b7280;--line:#e7e1d7;--accent:#c8102e;--accent-ink:#fff;--chip:#efe9dd;--ok:#1d7a46;--warn:#b45309}
-@media (prefers-color-scheme:dark){:root{--bg:#14161b;--card:#1d2027;--ink:#eceef2;--mute:#9aa1ad;--line:#2b2f38;--accent:#ff5a6e;--accent-ink:#14161b;--chip:#2a2e37;--ok:#58c58a;--warn:#f0a855}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:78px}
-header{padding:calc(14px + env(safe-area-inset-top)) 16px 8px}
-h1{margin:0;font-size:22px}
-.sub{color:var(--mute);font-size:13px}
-.days{display:flex;gap:8px;overflow-x:auto;padding:8px 16px;position:sticky;top:0;background:var(--bg);z-index:5;scrollbar-width:none}
+:root{--bg:#fffdf2;--card:#ffffff;--ink:#5b3a4a;--mute:#a37f90;--line:#ffd9e6;--accent:#ff7fa8;--accent-ink:#ffffff;--accent-soft:#ffe9f1;--chip:#fff0f5;--ok:#5fbf9a;--warn:#e9a23b;--shadow:0 4px 14px rgba(255,127,168,.14);color-scheme:light}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);background-image:radial-gradient(circle at 12% 8%,#ffeaf2 0,transparent 38%),radial-gradient(circle at 92% 4%,#fff4c9 0,transparent 34%);background-attachment:fixed;color:var(--ink);font:16px/1.45 ui-rounded,"SF Pro Rounded","Nunito","Varela Round","Quicksand",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:84px}
+header{padding:calc(16px + env(safe-area-inset-top)) 16px 6px;text-align:center}
+h1{margin:0;font-size:26px;letter-spacing:.2px;color:#e0557f}
+.sub{color:var(--mute);font-size:13px;margin-top:2px}
+.days{display:flex;gap:8px;overflow-x:auto;padding:8px 16px;position:sticky;top:0;background:linear-gradient(var(--bg) 82%,rgba(255,253,242,0));z-index:5;scrollbar-width:none}
 .days::-webkit-scrollbar{display:none}
-.day{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;padding:6px 12px;text-align:center;min-width:54px;font:inherit}
+.day{flex:0 0 auto;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:18px;padding:6px 12px;text-align:center;min-width:56px;font:inherit;box-shadow:var(--shadow)}
 .day b{display:block;font-size:18px}.day span{font-size:11px;color:var(--mute)}
-.day.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}.day.on span{color:inherit;opacity:.85}
-.chips{display:flex;gap:8px;flex-wrap:wrap;padding:4px 16px 8px}
-.chip{border:1px solid var(--line);background:var(--chip);color:var(--ink);border-radius:999px;padding:6px 12px;font:inherit;font-size:14px}
+.day.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}.day.on span{color:inherit;opacity:.9}
+.chips{display:flex;gap:8px;flex-wrap:wrap;padding:6px 16px 8px}
+.chip{border:2px solid var(--line);background:var(--chip);color:var(--ink);border-radius:999px;padding:6px 13px;font:inherit;font-size:14px}
 .chip.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 main{padding:4px 16px}
 .dayhead{margin:10px 0 6px;font-size:15px;color:var(--mute)}
-.dayhead strong{color:var(--ink);font-size:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin:8px 0}
+.dayhead strong{color:#e0557f;font-size:20px}
+.dayhead strong::before{content:"🌸 "}
+.card{--cat:#ffd9e6;background:var(--card);border:2px solid var(--line);border-left:7px solid var(--cat);border-radius:20px;padding:12px;margin:10px 0;box-shadow:var(--shadow)}
+.card.cat-eat{--cat:#ffcfb8}.card.cat-sight{--cat:#bfebd4}.card.cat-show{--cat:#d9c8ff}.card.cat-shop{--cat:#ffb8d4}.card.cat-night{--cat:#bcd0ff}.card.cat-go{--cat:#ffe99a}.card.cat-work{--cat:#cfd9e6}
 .card.done{opacity:.5}
 .row{display:flex;gap:10px;align-items:flex-start}
 .time{flex:0 0 46px;font-size:13px;color:var(--mute);padding-top:2px}
 .body{flex:1;min-width:0}
-.name{font-weight:650}
+.name{font-weight:700}
 .meta{font-size:13px;color:var(--mute);margin-top:2px}
 .note{font-size:14px;margin-top:6px}
-.tag{display:inline-block;font-size:11px;border-radius:6px;padding:1px 6px;margin-left:6px;vertical-align:middle;background:var(--chip);color:var(--mute);font-weight:500}
+.tag{display:inline-block;font-size:11px;border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:middle;background:var(--chip);color:var(--mute);font-weight:600}
 .tag.book{background:var(--accent);color:var(--accent-ink)}
-.tag.q{color:var(--warn)}
-.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-a.btn{display:inline-block;border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:14px;color:var(--ink);text-decoration:none;background:var(--bg)}
+.tag.q{color:#b7791f;background:#fff3cf}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
+a.btn{display:inline-block;border:2px solid var(--line);border-radius:999px;padding:6px 13px;font-size:14px;color:var(--ink);text-decoration:none;background:var(--bg);font-weight:600}
 a.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-input[type=checkbox]{width:22px;height:22px;accent-color:var(--accent);margin:0}
-.warn{background:var(--card);border-left:4px solid var(--warn);border-radius:8px;padding:10px 12px;margin:8px 0;font-size:14px}
-.group{margin:16px 0 4px;font-weight:700;font-size:15px}
-nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);z-index:10}
+a.btn.ghost{color:var(--mute);font-weight:500}
+input[type=checkbox]{width:24px;height:24px;accent-color:var(--accent);margin:0}
+.warn{background:#fff8d6;border:2px dashed #ffd2e0;border-radius:16px;padding:10px 12px;margin:10px 0;font-size:14px}
+.group{margin:18px 0 4px;font-weight:700;font-size:15px;color:#e0557f}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(255,255,255,.94);border-top:2px solid var(--line);border-radius:22px 22px 0 0;padding-bottom:env(safe-area-inset-bottom);z-index:10;box-shadow:0 -6px 18px rgba(255,127,168,.15)}
 nav button{flex:1;border:0;background:none;color:var(--mute);padding:12px 4px;font:inherit;font-size:13px}
 nav button.on{color:var(--accent);font-weight:700}
 </style>
 </head>
 <body>
 <header>
-  <h1>Toronto · 9–19 Nov 2026</h1>
+  <h1>🍁 Toronto · 9–19 Nov 💖</h1>
   <div class="sub">Sheraton Centre (9–14) · Samesun, Kensington (14–19) · Summit 12–13</div>
 </header>
 <div id="daybar" class="days"></div>
@@ -69,18 +72,18 @@ const I=[
 // ---- Mon 9
 {d:9,t:'07:00',c:'go',n:'Montréal connection',a:'Montréal airport',p:'Free',s:'S',x:'Immigration and customs here, re-check bag, short flight to Pearson (8:45–10:10).'},
 {d:9,t:'10:30',c:'go',n:'UP Express → Union → Sheraton',a:'Pearson → Union Station',p:'~C$12',s:'K',x:'About 25 min, every 15 min, tap a bank card. Then walk ~15 min or Line 1 to Osgoode. No stops with bags.',u:'https://www.upexpress.com'},
-{d:9,t:'12:00',c:'go',n:'Drop bags at the Sheraton bell desk',a:'123 Queen St W',p:'Free',s:'C',x:'Bag holding not confirmed. Call the hotel: (888) 323-5826 (from a listing, unverified). Check-in from 15:00.'},
+{d:9,t:'12:00',c:'go',n:'Drop bags at the Sheraton bell desk',a:'123 Queen St W',p:'Free',s:'C',x:'Bag holding not confirmed. Call the hotel: (888) 323-5826 (from a listing, unverified). Check-in from 15:00.',u:'https://www.marriott.com/en-us/hotels/yyzsc-sheraton-centre-toronto-hotel/overview/'},
 {d:9,t:'12:30',c:'eat',n:'Lunch: Paramount',a:'near Eaton Centre',p:'C$12–18',s:'K',x:'Middle Eastern fast food: shawarma, falafel, rice plates.'},
-{d:9,t:'12:30',c:'eat',n:'Lunch: Marugame Udon',a:'near Eaton Centre',p:'C$12–18',s:'K',x:'Thick udon made in front of you; pick tempura toppings.'},
+{d:9,t:'12:30',c:'eat',n:'Lunch: Marugame Udon',a:'near Eaton Centre',p:'C$12–18',s:'K',x:'Thick udon made in front of you; pick tempura toppings.',u:'https://www.marugameudon.ca'},
 {d:9,t:'12:30',c:'eat',n:'Lunch: Eaton Centre food court',a:'220 Yonge St',p:'C$10–18',s:'S',x:'Easy choice when tired from the flight.'},
 {d:9,t:'14:00',c:'shop',n:'Eaton Centre (light shopping)',a:'220 Yonge St',p:'Free to walk',s:'S',x:'200+ stores; Aritzia and Roots here.'},
-{d:9,t:'15:00',c:'eat',n:'Treat: Forno Cultura biscotti ✓',a:'check nearest branch',p:'Cheap',s:'K',x:'Italian bakery, biscotti and pastries. Already chosen.'},
+{d:9,t:'15:00',c:'eat',n:'Treat: Forno Cultura biscotti ✓',a:'check nearest branch',p:'Cheap',s:'K',x:'Italian bakery, biscotti and pastries. Already chosen.',u:'https://www.fornocultura.com'},
 {d:9,t:'15:00',c:'eat',n:'Treat: Uncle Tetsu',a:'downtown',p:'C$10–20',s:'K',x:'Jiggly Japanese cheesecake.'},
 {d:9,t:'15:00',c:'eat',n:'Treat: Tsujiri',a:'downtown',p:'C$7–12',s:'K',x:'Matcha soft serve and desserts.'},
-{d:9,t:'16:00',c:'go',n:'Check-in · Sheraton, then nap',a:'123 Queen St W',p:'Booked',s:'S',x:'From 15:00, confirm.'},
+{d:9,t:'16:00',c:'go',n:'Check-in · Sheraton, then nap',a:'123 Queen St W',p:'Booked',s:'S',x:'From 15:00, confirm.',u:'https://www.marriott.com/en-us/hotels/yyzsc-sheraton-centre-toronto-hotel/overview/'},
 {d:9,t:'18:00',c:'sight',n:'Waterfront stroll (optional)',a:'Harbourfront',p:'Free',s:'S',x:'Lake Ontario and skyline.'},
-{d:9,t:'19:00',c:'eat',n:'Dinner: Richmond Station',a:'1 Richmond St W',p:'C$30–60',s:'K',x:'Modern Canadian, good burger. Booking helps.',b:'https://www.opentable.ca',bl:'Reserve (OpenTable)'},
-{d:9,t:'19:00',c:'eat',n:'Dinner: Sud Forno',a:'see Maps',p:'C$10–20',s:'K',x:'Italian bakery-café, pizza by the slice.'},
+{d:9,t:'19:00',c:'eat',n:'Dinner: Richmond Station',a:'1 Richmond St W',p:'C$30–60',s:'K',x:'Modern Canadian, good burger. Booking helps.',b:'https://www.opentable.ca/s?term=Richmond%20Station%20Toronto',bl:'Reserve (OpenTable)',u:'https://www.richmondstation.ca'},
+{d:9,t:'19:00',c:'eat',n:'Dinner: Sud Forno',a:'see Maps',p:'C$10–20',s:'K',x:'Italian bakery-café, pizza by the slice.',u:'https://www.sudforno.com'},
 // ---- Tue 10
 {d:10,t:'09:00',c:'work',n:'WORK at the hotel',a:'Sheraton',p:'–',s:'S',x:'9:00–17:00. Nothing to book.'},
 {d:10,t:'12:00',c:'eat',n:'Lunch: St. Lawrence Market + peameal bacon',a:'92 Front St E',p:'~C$10–13',s:'K',x:'Peameal bacon sandwich is the classic. Open Tue–Sat. Also maple syrup shopping.',u:'https://www.stlawrencemarket.com'},
@@ -88,7 +91,7 @@ const I=[
 {d:10,t:'20:00',c:'eat',n:'Late poutine (optional)',a:'anywhere downtown',p:'C$10–14',s:'S',x:'Fries, cheese curds, gravy.'},
 // ---- Wed 11
 {d:11,t:'09:00',c:'work',n:'WORK at the hotel',a:'Sheraton',p:'–',s:'S',x:'Remembrance Day: only the 11:00 minute of silence.'},
-{d:11,t:'12:00',c:'eat',n:'Lunch: Sud Forno / St. Lawrence',a:'see Maps',p:'C$10–20',s:'K'},
+{d:11,t:'12:00',c:'eat',n:'Lunch: Sud Forno / St. Lawrence',a:'see Maps',p:'C$10–20',s:'K',u:'https://www.sudforno.com'},
 {d:11,t:'17:30',c:'eat',n:'Dinner: Kinka Izakaya ✓',a:'several locations',p:'C$25–45',s:'K',x:'Loud, fun izakaya. Small shared dishes and skewers.'},
 {d:11,t:'19:45',c:'sight',n:'CN Tower',a:'290 Bremner Blvd',p:'In CityPASS',s:'S',x:'553 m, glass floor. Reserve slot in My CityPASS app.',u:'https://www.cntower.ca',b:'https://www.citypass.com/toronto',bl:'CityPASS'},
 {d:11,t:'21:00',c:'sight',n:"Ripley's Aquarium",a:'288 Bremner Blvd',p:'In CityPASS',s:'S',x:'Shark tunnel with moving walkway. Reserve slot too.',u:'https://www.ripleyaquariums.com/canada/',b:'https://www.citypass.com/toronto',bl:'CityPASS'},
@@ -105,11 +108,11 @@ const I=[
 {d:14,t:'08:00',c:'go',n:'Check-out Sheraton → taxi to Samesun, drop bags',a:'280 Augusta Ave',p:'Booked',s:'S'},
 {d:14,t:'10:00',c:'go',n:'510 streetcar → Union · train lunch',a:'Spadina Ave',p:'~C$3.35',s:'K'},
 {d:14,t:'11:09',c:'go',n:'GO train → Niagara Falls',a:'Union Station',p:'~C$20–32',s:'K',x:'⚠ Official page lists Sat departures 9:03, 13:05, 18:21 and back from Niagara 12:04, 16:04, 21:06. Does NOT match the plan (11:09 / 22:10). Check!',u:'https://gotransit.com/en/partners-and-promotions/go-train-to-niagara-on-weekends',b:'https://gotransit.com/en/partners-and-promotions/go-train-to-niagara-on-weekends',bl:'Timetable'},
-{d:14,t:'14:00',c:'sight',n:'Butterfly Conservatory',a:'Niagara Parks',p:'~C$20',s:'K',x:'Warm tropical greenhouse with free-flying butterflies.'},
-{d:14,t:'15:00',c:'sight',n:'Falls walk',a:'Horseshoe Falls & Table Rock',p:'Free',s:'S',x:'Sunset around 16:54.'},
+{d:14,t:'14:00',c:'sight',n:'Butterfly Conservatory',a:'Niagara Parks',p:'~C$20',s:'K',x:'Warm tropical greenhouse with free-flying butterflies.',u:'https://www.niagaraparks.com'},
+{d:14,t:'15:00',c:'sight',n:'Falls walk',a:'Horseshoe Falls & Table Rock',p:'Free',s:'S',x:'Sunset around 16:54.',u:'https://www.niagaraparks.com'},
 {d:14,t:'17:00',c:'sight',n:'Power Station at Night + Tunnel',a:'Niagara Parks Power Station',p:'~C$33–43',s:'S',x:'1905 hydro plant, tunnel under the falls, light show. Pick a time before the 20:00 fireworks.',u:'https://www.niagaraparks.com/visit/attractions/power-station-at-night',b:'https://www.niagaraparks.com/visit/attractions/power-station-at-night',bl:'Buy ticket'},
-{d:14,t:'18:30',c:'eat',n:'Dinner: Tim Hortons / poutine',a:'everywhere',p:'C$3–12',s:'S',x:'Try a double-double and Timbits.'},
-{d:14,t:'19:00',c:'sight',n:'SkyWheel',a:'Clifton Hill',p:'~C$17',s:'K',x:'Ferris wheel with view of falls and lights.'},
+{d:14,t:'18:30',c:'eat',n:'Dinner: Tim Hortons / poutine',a:'everywhere',p:'C$3–12',s:'S',x:'Try a double-double and Timbits.',u:'https://www.timhortons.ca'},
+{d:14,t:'19:00',c:'sight',n:'SkyWheel',a:'Clifton Hill',p:'~C$17',s:'K',x:'Ferris wheel with view of falls and lights.',u:'https://www.cliftonhill.com'},
 {d:14,t:'20:00',c:'sight',n:'Fireworks · Festival of Lights',a:'Niagara Falls',p:'Free',s:'S',x:'Fri/Sat 20:00 from Nov 14 per one late-Oct report. Festival dates not official.',u:'https://www.niagaraparks.com/events/event/niagara-falls-fireworks-series'},
 {d:14,t:'21:30',c:'go',n:'Taxi → GO station; last GO train 22:10 → Union 00:38',a:'Niagara Falls GO',p:'Included in fare',s:'K',x:'Check that it runs that night (see timetable warning above). Then Uber → Samesun.'},
 // ---- Sun 15
@@ -117,43 +120,43 @@ const I=[
 {d:15,t:'12:00',c:'sight',n:'Casa Loma',a:'1 Austin Terrace',p:'In CityPASS',s:'S',x:'1914 castle, towers, passages, gardens. Reserve slot.',u:'https://casaloma.ca',b:'https://www.citypass.com/toronto',bl:'CityPASS'},
 {d:15,t:'12:00',c:'sight',n:'Royal Agricultural Winter Fair (alternative)',a:'Exhibition Place',p:'~C$37 (2025 price)',s:'K',x:'Last day. Largest indoor agricultural fair. 3–5 h, would replace Casa Loma. Undecided.',u:'https://www.royalfair.org'},
 {d:15,t:'14:00',c:'sight',n:'Bata Shoe Museum (confirm)',a:'327 Bloor St W',p:'Check (free Sun?)',s:'K',x:'Museum of shoes. Later notes said you were not interested.',u:'https://www.batashoemuseum.ca'},
-{d:15,t:'15:00',c:'shop',n:'BMV Books',a:'471 Bloor St W',p:'Cheap',s:'K',x:'Huge used-books store.'},
-{d:15,t:'15:30',c:'shop',n:'Seekers Books',a:'509 Bloor St W',p:'Cheap',s:'K',x:'Independent bookstore, a block away.'},
-{d:15,t:'18:00',c:'eat',n:'Dinner: Pizzeria Libretto ✓',a:'several locations',p:'C$18–25',s:'K',x:'Wood-fired Neapolitan pizza (moved from Tue 10).'},
+{d:15,t:'15:00',c:'shop',n:'BMV Books',a:'471 Bloor St W',p:'Cheap',s:'K',x:'Huge used-books store.',u:'https://www.bmvbooks.com'},
+{d:15,t:'15:30',c:'shop',n:'Seekers Books',a:'509 Bloor St W',p:'Cheap',s:'K',x:'Independent bookstore, a block away.',u:'https://seekersbooks.com'},
+{d:15,t:'18:00',c:'eat',n:'Dinner: Pizzeria Libretto ✓',a:'several locations',p:'C$18–25',s:'K',x:'Wood-fired Neapolitan pizza (moved from Tue 10).',u:'https://www.pizzerialibretto.com'},
 {d:15,t:'18:00',c:'eat',n:'Dinner: Sugo',a:'check Maps',p:'–',s:'C',x:'Could not confirm what it is.'},
 {d:15,t:'18:00',c:'eat',n:'Dinner: Banjara',a:'check Maps',p:'–',s:'C',x:'Indian restaurant, could not confirm.'},
 {d:15,t:'21:00',c:'night',n:'Civil Liberties',a:'878 Bloor St W',p:'C$16–20 a drink',s:'S',x:'No-menu cocktail bar, bartender makes to your taste.'},
 {d:15,t:'21:00',c:'show',n:'Julia Jacklin / Catie Turner',a:'',p:'–',s:'C',x:'Could not confirm either plays Toronto on this date.'},
 // ---- Mon 16
-{d:16,t:'09:00',c:'eat',n:'Breakfast: Blackbird Baking Co ✓',a:'check Maps',p:'C$5–12',s:'K',x:'Sourdough and pastries.'},
+{d:16,t:'09:00',c:'eat',n:'Breakfast: Blackbird Baking Co ✓',a:'check Maps',p:'C$5–12',s:'K',x:'Sourdough and pastries.',u:'https://www.blackbirdbaking.com'},
 {d:16,t:'10:00',c:'sight',n:'Hockey Hall of Fame',a:'30 Yonge St',p:'~C$25–30',s:'K',x:'Stanley Cup, goalie masks, interactive games.',u:'https://www.hhof.com'},
-{d:16,t:'12:00',c:'eat',n:'Lunch: Sud Forno',a:'see Maps',p:'C$10–20',s:'K'},
+{d:16,t:'12:00',c:'eat',n:'Lunch: Sud Forno',a:'see Maps',p:'C$10–20',s:'K',u:'https://www.sudforno.com'},
 {d:16,t:'12:00',c:'eat',n:'Lunch: Amsterdam Brewhouse',a:'245 Queens Quay W',p:'C$20–35',s:'K',x:'Harbour patio and craft beer.',u:'https://www.amsterdambrewhouse.com'},
 {d:16,t:'13:00',c:'sight',n:"Ward's Island ferry · skyline view",a:'Jack Layton Ferry Terminal',p:'~C$9.57 return',s:'S',x:'Replaces the harbour cruise (closed in winter). Winter ferries every 30–60 min; check timetable. Ask CityPASS if the cruise can be swapped.',u:'https://www.toronto.ca/ferry'},
 {d:16,t:'14:00',c:'sight',n:'Toronto Biennial of Art',a:'Harbourfront Centre',p:'Free / check',s:'S',x:'Free Harbourfront exhibitions. Runs to Dec 20 (or Dec 31 per Summit PDF).',u:'https://torontobiennial.org'},
 {d:16,t:'15:30',c:'sight',n:'Distillery District + Winter Village',a:'55 Mill St',p:'Walk free; Village ~C$15–16 + fees',s:'S',x:'Christmas market opens Nov 12. Tickets needed at peak times; weekday afternoon may not.',u:'https://thedistillerywintervillage.com',b:'https://thedistillerywintervillage.com',bl:'Tickets / FAQ'},
-{d:16,t:'16:30',c:'eat',n:"Balzac's Coffee",a:'Distillery District',p:'C$4–7',s:'K'},
+{d:16,t:'16:30',c:'eat',n:"Balzac's Coffee",a:'Distillery District',p:'C$4–7',s:'K',u:'https://balzacs.com'},
 {d:16,t:'17:30',c:'eat',n:'Early dinner: Bar ARDO',a:'check Maps',p:'–',s:'C',x:'Could not find details.'},
-{d:16,t:'17:30',c:'eat',n:'Early dinner: Richmond Station',a:'1 Richmond St W',p:'C$30–60',s:'K',b:'https://www.opentable.ca',bl:'Reserve (OpenTable)'},
+{d:16,t:'17:30',c:'eat',n:'Early dinner: Richmond Station',a:'1 Richmond St W',p:'C$30–60',s:'K',b:'https://www.opentable.ca/s?term=Richmond%20Station%20Toronto',bl:'Reserve (OpenTable)',u:'https://www.richmondstation.ca'},
 {d:16,t:'19:00',c:'show',n:'Slow Pulp',a:'Danforth Music Hall, 147 Danforth Ave',p:'Resale ~23–49',s:'S',x:'Doors ~19:00 per resale listings; confirm. Buy now, may sell out.',u:'https://www.ticketmaster.ca/slow-pulp-toronto-ontario-11-16-2026/event/100064A6E9339E82',b:'https://www.ticketmaster.ca/slow-pulp-toronto-ontario-11-16-2026/event/100064A6E9339E82',bl:'Tickets'},
 // ---- Tue 17
 {d:17,t:'09:00',c:'eat',n:'Breakfast: Café Belém',a:'check Maps',p:'C$3–10',s:'K',x:'Portuguese bakery, pastéis de nata.'},
 {d:17,t:'09:00',c:'eat',n:'Breakfast: Harbord Bakery',a:'Harbord St',p:'C$3–10',s:'K',x:'Old Jewish bakery; rugelach.'},
 {d:17,t:'09:00',c:'eat',n:'Breakfast: Mashion',a:'check Maps',p:'–',s:'C',x:'Could not find details.'},
 {d:17,t:'10:00',c:'sight',n:'Kensington Market',a:'Around Augusta Ave',p:'Free',s:'S',x:'Vintage shops, cafés, street art. Your hostel is here.'},
-{d:17,t:'10:30',c:'shop',n:'Sonic Boom (vinyl)',a:'215 Spadina Ave',p:'C$20–50',s:'K',x:'New and used records.'},
+{d:17,t:'10:30',c:'shop',n:'Sonic Boom (vinyl)',a:'215 Spadina Ave',p:'C$20–50',s:'K',x:'New and used records.',u:'https://sonicboommusic.com'},
 {d:17,t:'11:00',c:'shop',n:'Books on College St',a:'College St',p:'–',s:'K',x:'You said you want fewer bookstores.'},
 {d:17,t:'12:00',c:'eat',n:'Lunch: Ramen Isshin',a:'check Maps',p:'C$16–20',s:'K',x:'Check menu and queue.'},
 {d:17,t:'12:00',c:'eat',n:'Lunch: Kiyomi',a:'several locations',p:'C$25–45',s:'S',x:'Tempura and sushi.'},
 {d:17,t:'12:00',c:'eat',n:'Lunch: Nom Nom Nom',a:'check Maps',p:'–',s:'C',x:'Could not confirm what this is.'},
 {d:17,t:'13:30',c:'sight',n:"Queen's Park + U of T campus walk",a:"Queen's Park",p:'Free',s:'S'},
-{d:17,t:'14:30',c:'sight',n:'Thomas Fisher Rare Book Library',a:'120 St George St',p:'Free',s:'K',x:'Free exhibition room of old manuscripts.'},
-{d:17,t:'15:30',c:'eat',n:'Eataly cannoli',a:'Eaton Centre area',p:'C$5–8 each',s:'K'},
+{d:17,t:'14:30',c:'sight',n:'Thomas Fisher Rare Book Library',a:'120 St George St',p:'Free',s:'K',x:'Free exhibition room of old manuscripts.',u:'https://thomasfisher.library.utoronto.ca'},
+{d:17,t:'15:30',c:'eat',n:'Eataly cannoli',a:'Eaton Centre area',p:'C$5–8 each',s:'K',u:'https://www.eataly.com/ca_en/'},
 {d:17,t:'16:30',c:'sight',n:'ROM Third Tuesday Night Free',a:'100 Queen\'s Park',p:'Free (timed ticket)',s:'S',x:'16:30–20:30. You cannot enter without a free timed ticket; release date not found, check now.',u:'https://www.rom.on.ca',b:'https://www.rom.on.ca',bl:'Reserve'},
 {d:17,t:'19:30',c:'show',n:'Grinch musical (optional)',a:'CAA Ed Mirvish Theatre, 244 Victoria St',p:'Not confirmed',s:'K',x:'Tue–Sat 7:30 pm, 85 min, no intermission. Fits after the ROM. Your call.',u:'https://www.mirvish.com/shows/dr-seuss-how-the-grinch-stole-christmas-the-musical',b:'https://www.mirvish.com/shows/dr-seuss-how-the-grinch-stole-christmas-the-musical',bl:'Show page'},
-{d:17,t:'19:00',c:'eat',n:'Dinner: Bar Raval',a:'505 College St',p:'C$15–20 a drink',s:'S',x:'Spanish tapas and cocktails, carved wood interior.'},
+{d:17,t:'19:00',c:'eat',n:'Dinner: Bar Raval',a:'505 College St',p:'C$15–20 a drink',s:'S',x:'Spanish tapas and cocktails, carved wood interior.',u:'https://www.barraval.com'},
 {d:17,t:'19:00',c:'eat',n:'Dinner: Via Mercanti',a:'check Maps',p:'–',s:'C',x:'Could not confirm.'},
-{d:17,t:'21:00',c:'night',n:'Bar Pompette',a:'607 College St',p:'C$16–20 a drink',s:'S',x:'Little Italy cocktail bar; #1 in Canada\'s 50 Best Bars 2024 and 2025.'},
+{d:17,t:'21:00',c:'night',n:'Bar Pompette',a:'607 College St',p:'C$16–20 a drink',s:'S',x:'Little Italy cocktail bar; #1 in Canada\'s 50 Best Bars 2024 and 2025.',u:'https://www.barpompette.com'},
 {d:17,t:'21:00',c:'night',n:'Handlebar',a:'159 Augusta Ave',p:'–',s:'K',x:'Bar in Kensington, near the hostel.'},
 {d:17,t:'21:00',c:'show',n:'Patrick Wolf',a:'',p:'–',s:'C',x:'Could not confirm a show.'},
 // ---- Wed 18
@@ -175,7 +178,7 @@ const I=[
 {d:18,t:'22:00',c:'night',n:'Farewell drink: Tilt (arcade bar)',a:'824 Dundas St W',p:'Tokens + drinks',s:'S',x:'Retro games.'},
 {d:18,t:'22:00',c:'night',n:'Farewell drink: Handlebar / Freak Slug',a:'159 Augusta Ave',p:'–',s:'C',x:'Freak Slug could not be found.'},
 // ---- Thu 19
-{d:19,t:'09:00',c:'eat',n:'Breakfast: Harbord / Blackbird · Wanda\'s butter tarts',a:'check Maps',p:'~C$4 a tart',s:'K',x:'Butter tarts: flaky shell, gooey butter-sugar-egg filling.'},
+{d:19,t:'09:00',c:'eat',n:'Breakfast: Harbord / Blackbird · Wanda\'s butter tarts',a:'check Maps',p:'~C$4 a tart',s:'K',x:'Butter tarts: flaky shell, gooey butter-sugar-egg filling.',u:'https://www.wandaspieinthesky.com'},
 {d:19,t:'10:00',c:'go',n:'Check-out, bags held at Samesun',a:'280 Augusta Ave',p:'–',s:'S'},
 {d:19,t:'12:00',c:'shop',n:'Vaughan Mills outlets',a:'Vaughan',p:'Free to walk',s:'S',x:'Subway + bus, about an hour each way.',u:'https://www.vaughanmills.com'},
 {d:19,t:'16:00',c:'go',n:'Back to the hostel for bags',a:'',p:'–',s:'S'},
@@ -185,10 +188,10 @@ const I=[
 {d:0,c:'shop',n:'Maple syrup & maple butter',a:'St. Lawrence Market, 92 Front St E',p:'',s:'K',x:'Cheaper than in Brazil. Liquids over 100 ml → checked bag.'},
 {d:0,c:'shop',n:'Canadian snacks',a:'Shoppers Drug Mart / Dollarama',p:'',s:'K',x:'Ketchup chips, Coffee Crisp, Smarties, Hawkins Cheezies, Nanaimo bars.'},
 {d:0,c:'shop',n:'Niagara ice wine',a:'LCBO',p:'',s:'K',x:'Counts toward the 12 L alcohol limit; checked bag.'},
-{d:0,c:'shop',n:'Aritzia · Roots',a:'Eaton Centre, 220 Yonge St',p:'',s:'C',x:'Brand availability in Brazil not verified.'},
+{d:0,c:'shop',n:'Aritzia · Roots',a:'Eaton Centre, 220 Yonge St',p:'',s:'C',x:'Brand availability in Brazil not verified.',u:'https://www.aritzia.com'},
 {d:0,c:'shop',n:'Indigenous-made art (Cedar Basket Gift Shop)',a:'Native Canadian Centre, 16 Spadina Rd',p:'',s:'K',x:'Buy from Indigenous makers, not factory "style" items.'},
 {d:0,c:'shop',n:'Group of Seven prints',a:'AGO shop / ROM Boutique',p:'',s:'K'},
-{d:0,c:'shop',n:'Vinyl: Sonic Boom, Rotate This',a:'Spadina Ave / Queen St W',p:'',s:'K',x:'About 180 g each.'},
+{d:0,c:'shop',n:'Vinyl: Sonic Boom, Rotate This',a:'Spadina Ave / Queen St W',p:'',s:'K',x:'About 180 g each.',u:'https://sonicboommusic.com'},
 {d:0,c:'shop',n:'Thrift & vintage: Value Village, Bungalow, Courage My Love',a:'639 Queen St W; Kensington',p:'',s:'K'},
 {d:0,c:'shop',n:'Raccoon socks (Outer Layer)',a:'Toronto',p:'',s:'K',x:'Light, cheap gift.'},
 {d:0,c:'shop',n:'Raptors / Leafs / Blue Jays gear',a:'Eaton Centre / Scotiabank Arena',p:'',s:'K'},
@@ -206,7 +209,7 @@ const TOBOOK=[
  {w:'3. When tickets open',n:'ROM Third Tuesday Night Free (Tue 17)',x:'Free timed ticket, 16:30–20:30. Release date not found.',u:'https://www.rom.on.ca',l:'ROM'},
  {w:'3. When tickets open',n:'Distillery Winter Village (Mon 16)',x:'Opens Nov 12. Tickets at peak times, ~C$15–16 + fees.',u:'https://thedistillerywintervillage.com',l:'Winter Village'},
  {w:'4. Recommended',n:'Canoe sunset drink (Wed 18, ~16:00)',x:'Online reservations only. Smart casual.',u:'https://canoerestaurant.com',l:'Canoe',u2:'https://www.opentable.ca/canoe-restaurant-and-bar-reservations-toronto',l2:'OpenTable'},
- {w:'4. Recommended',n:'Richmond Station (Mon 9 or Mon 16)',x:'Reserve if you pick it.',u:'https://www.opentable.ca',l:'OpenTable'},
+ {w:'4. Recommended',n:'Richmond Station (Mon 9 or Mon 16)',x:'Reserve if you pick it.',u:'https://www.opentable.ca/s?term=Richmond%20Station%20Toronto',l:'OpenTable'},
  {w:'5. Optional',n:'Grinch musical (Tue 17 or Wed 18)',x:'Nov 10–22, 7:30 pm, 85 min. Prices not confirmed.',u:'https://www.mirvish.com/shows/dr-seuss-how-the-grinch-stole-christmas-the-musical',l:'Mirvish'},
  {w:'5. Optional',n:'Goodnight Desdemona (Good Morning Juliet)',x:'Nov 6–22, Bluma Appel Theatre. Only if you swap something. C$50–160. Box office 416-368-3310.',u:'https://www.canadianstage.com/show/goodnight-desdemona-good-morning-juliet',l:'Canadian Stage'},
  {w:'6. No booking needed',n:"Ward's Island ferry (Mon 16)",x:'Pay at the terminal. Check the winter timetable.',u:'https://www.toronto.ca/ferry',l:'Timetable'},
@@ -235,12 +238,12 @@ function card(i,showDay){
   const isShop=i.d===0;
   const links=[];
   if(i.b)links.push(`<a class="btn primary" href="${esc(i.b)}" target="_blank" rel="noopener">${esc(i.bl||'Book')}</a>`);
-  if(i.u&&i.u!==i.b)links.push(`<a class="btn" href="${esc(i.u)}" target="_blank" rel="noopener">Website</a>`);
-  if(!i.u&&!i.b)links.push(`<a class="btn" href="https://www.google.com/search?q=${encodeURIComponent(i.n+' Toronto')}" target="_blank" rel="noopener">Search</a>`);
-  if(i.a!==''&&i.c!=='go'||i.d===0)links.push(`<a class="btn" href="${maps(i)}" target="_blank" rel="noopener">Map</a>`);
-  return `<div class="card ${done[k]?'done':''}"><div class="row">
+  if(i.u&&i.u!==i.b)links.push(`<a class="btn" href="${esc(i.u)}" target="_blank" rel="noopener">🌐 Website</a>`);
+  if(!i.u&&!i.b)links.push(`<a class="btn ghost" href="https://www.google.com/search?q=${encodeURIComponent(i.n+' Toronto official site')}" target="_blank" rel="noopener">🔍 Find site</a>`);
+  if(i.a!==''&&i.c!=='go'||i.d===0)links.push(`<a class="btn" href="${maps(i)}" target="_blank" rel="noopener">📍 Map</a>`);
+  return `<div class="card cat-${i.c} ${done[k]?'done':''}"><div class="row">
    <div class="time">${showDay?esc(dayLabel(i.d).replace(' Nov','')):esc(i.t||'')}${showDay&&i.t?'<br>'+esc(i.t):''}</div>
-   <div class="body"><div class="name">${esc(i.n)}${i.b&&true?'<span class="tag book">book</span>':''}${SURE[i.s]?`<span class="tag q">${SURE[i.s]}</span>`:''}</div>
+   <div class="body"><div class="name">${CATS[i.c].split(' ')[0]} ${esc(i.n)}${i.b&&true?'<span class="tag book">book</span>':''}${SURE[i.s]?`<span class="tag q">${SURE[i.s]}</span>`:''}</div>
    <div class="meta">${esc([i.p,i.a].filter(Boolean).join(' · '))}</div>
    ${i.x?`<div class="note">${esc(i.x)}</div>`:''}
    <div class="links">${links.join('')}</div></div>
