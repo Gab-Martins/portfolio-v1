@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Toronto Trip</title>
 <meta name="theme-color" content="#fffdf2">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Toronto">
 <style>
 :root{--bg:#fffdf2;--card:#ffffff;--ink:#5b3a4a;--mute:#a37f90;--line:#ffd9e6;--accent:#ff7fa8;--accent-ink:#ffffff;--accent-soft:#ffe9f1;--chip:#fff0f5;--ok:#5fbf9a;--warn:#e9a23b;--shadow:0 4px 14px rgba(255,127,168,.14);color-scheme:light}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -44,12 +48,13 @@ input[type=checkbox]{width:24px;height:24px;accent-color:var(--accent);margin:0}
 .warn{background:#fff8d6;border:2px dashed #ffd2e0;border-radius:16px;padding:10px 12px;margin:10px 0;font-size:14px}
 .group{margin:18px 0 4px;font-weight:700;font-size:15px;color:#e0557f}
 nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(255,255,255,.94);border-top:2px solid var(--line);border-radius:22px 22px 0 0;padding-bottom:env(safe-area-inset-bottom);z-index:10;box-shadow:0 -6px 18px rgba(255,127,168,.15)}
-nav button{flex:1;border:0;background:none;color:var(--mute);padding:12px 4px;font:inherit;font-size:13px}
+nav button{flex:1;border:0;background:none;color:var(--mute);padding:12px 2px;font:inherit;font-size:12px}
 nav button.on{color:var(--accent);font-weight:700}
 .chk{display:flex;gap:12px;align-items:flex-start;padding:9px 2px;border-bottom:1px dashed var(--line);font-size:15px}
 .chk:last-child{border-bottom:0}
 .chk.on span{text-decoration:line-through;opacity:.5}
 .chk input{flex:0 0 auto;margin-top:1px}
+.steps{margin:0;padding-left:20px;font-size:15px}.steps li{margin:6px 0}
 </style>
 </head>
 <body>
@@ -61,10 +66,11 @@ nav button.on{color:var(--accent);font-weight:700}
 <div id="chipbar" class="chips"></div>
 <main id="main"></main>
 <nav>
-  <button data-v="day" class="on">By day</button>
-  <button data-v="cat">By category</button>
+  <button data-v="day" class="on">Days</button>
+  <button data-v="cat">Category</button>
   <button data-v="book">To book</button>
   <button data-v="check">Checklist</button>
+  <button data-v="off">Offline</button>
 </nav>
 
 <script>
@@ -272,6 +278,22 @@ const CHECK=[
   'Be at Pearson about 3 h before the 23:55 flight',
   'Online check-in for the return flight']},
 ];
+const AREAS=[
+ ['Downtown Toronto','Sheraton, Eaton Centre, CN Tower, Union Station, St. Lawrence Market, Hockey Hall of Fame','Downtown Toronto, Ontario'],
+ ['Kensington · Queen West · AGO','Samesun, Kensington Market, Graffiti Alley, Queen West, AGO, Chinatown','Kensington Market, Toronto'],
+ ['Little Italy · Annex · Casa Loma','College St cafés and bars, Bloor St bookstores, ROM, Casa Loma, Queen\'s Park','Little Italy, Toronto'],
+ ['Distillery District','Winter Village, Balzac\'s, Biennial at Harbourfront nearby','Distillery District, Toronto'],
+ ['Harbourfront · Toronto Islands','Ferry terminal, Amsterdam Brewhouse, skyline views','Jack Layton Ferry Terminal, Toronto'],
+ ['Danforth Music Hall','Slow Pulp, Mon 16','Danforth Music Hall, Toronto'],
+ ['Pearson Airport','Arrival and departure, UP Express','Toronto Pearson International Airport'],
+ ['Niagara Falls (Ontario)','Falls, Butterfly Conservatory, Power Station, Clifton Hill, GO station','Niagara Falls, Ontario'],
+];
+const ROUTES=[
+ ['Mon 9 · Airport → hotel','UP Express from Pearson to Union (about 25 min, every 15 min, tap a bank card). Then walk about 15 min or take Line 1 to Osgoode. Sheraton: 123 Queen St W.','Sheraton Centre Toronto, 123 Queen St W, Toronto'],
+ ['Sat 14 · Hostel → Union → Niagara','510 Spadina streetcar to Union Station, then the GO train to Niagara Falls. ⚠ Official Saturday times did not match the plan (see the Sat 14 card). Check the timetable.','Union Station, Toronto'],
+ ['Sat 14 · Niagara → hostel','Last GO train 22:10 from Niagara Falls, Union 00:38, then Uber to Samesun. Check that it runs that night.','Niagara Falls GO Station, Ontario'],
+ ['Thu 19 · Hostel → airport','510 → Union → UP Express → Pearson. Be at the airport about 3 hours before the 23:55 flight.','Toronto Pearson International Airport']
+];
 const CAUTIONS=[
  'Brazil customs: US$1,000 purchase allowance by air, 12 L of alcohol. Confirm in the Receita Federal Guia do Viajante.',
  'Carry-on only: maple syrup and ice wine need a checked bag.',
@@ -284,7 +306,9 @@ const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 let view='day',day=null,cat='all';
 let done={};try{done=JSON.parse(localStorage.getItem('tt-done')||'{}')}catch(e){}
 const save=()=>{try{localStorage.setItem('tt-done',JSON.stringify(done))}catch(e){}};
-const maps=i=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(i.n.split(':').pop().split('/')[0].trim()+' '+(i.a||'')+' Toronto');
+const mq=i=>i.n.split(':').pop().split('/')[0].trim()+' '+(i.a||'')+' Toronto';
+const maps=i=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(mq(i));
+const dir=i=>'https://www.google.com/maps/dir/?api=1&travelmode=transit&destination='+encodeURIComponent(mq(i));
 const key=i=>i.d+'|'+i.n;
 const dayLabel=d=>{const x=DAYS.find(y=>y[0]===d);return x?x[1]+' '+d+' Nov':'Ideas'};
 
@@ -296,6 +320,7 @@ function card(i,showDay){
   if(i.u&&i.u!==i.b)links.push(`<a class="btn" href="${esc(i.u)}" target="_blank" rel="noopener">🌐 Website</a>`);
   if(!i.u&&!i.b)links.push(`<a class="btn ghost" href="https://www.google.com/search?q=${encodeURIComponent(i.n+' Toronto official site')}" target="_blank" rel="noopener">🔍 Find site</a>`);
   if(i.a!==''&&i.c!=='go'||i.d===0)links.push(`<a class="btn" href="${maps(i)}" target="_blank" rel="noopener">📍 Map</a>`);
+  if(i.a!==''&&i.c!=='go')links.push(`<a class="btn" href="${dir(i)}" target="_blank" rel="noopener">🧭 Directions</a>`);
   return `<div class="card cat-${i.c} ${done[k]?'done':''}"><div class="row">
    <div class="time">${showDay?esc(dayLabel(i.d).replace(' Nov','')):esc(i.t||'')}${showDay&&i.t?'<br>'+esc(i.t):''}</div>
    <div class="body"><div class="name">${CATS[i.c].split(' ')[0]} ${esc(i.n)}${i.b&&true?'<span class="tag book">book</span>':''}${SURE[i.s]?`<span class="tag q">${SURE[i.s]}</span>`:''}</div>
@@ -328,6 +353,16 @@ function render(){
       out+=`<div class="group">${g.g}</div><div class="card">`+g.i.map(t=>{const k='chk|'+t;return `<label class="chk ${done[k]?'on':''}"><input type="checkbox" ${done[k]?'checked':''} data-k="${esc(k)}" data-chk="1"><span>${esc(t)}</span></label>`}).join('')+`</div>`;
     });
     m.innerHTML=out;
+  }else if(view==='off'){
+    let out=`<div class="warn">🗺 <b>Offline maps need to be saved before you lose signal.</b> Do this at the hotel on Wi-Fi. Google Maps offline shows the map and search and gives driving directions. <b>Transit and walking directions do not work offline</b>, so screenshot those routes while you have signal.</div>
+    <div class="group">How to save an area (Google Maps)</div>
+    <div class="card"><ol class="steps"><li>Tap an <b>Open area</b> button below. Google Maps opens on that area.</li><li>Tap the place name at the bottom, then the <b>⋯ menu</b> and <b>Download offline map</b>. Adjust the box if needed, then <b>Download</b>.</li><li>Or: profile picture → <b>Offline maps</b> → <b>Select your own map</b>.</li><li>Tick the box here when done. Check that Offline maps lists it.</li></ol></div>
+    <div class="group">Areas to download</div>`;
+    AREAS.forEach(([n,w,q])=>{const k='off|'+n;out+=`<div class="card ${done[k]?'done':''}"><div class="row"><div class="body"><div class="name">📥 ${esc(n)}</div><div class="note">${esc(w)}</div><div class="links"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}" target="_blank" rel="noopener">Open area</a></div></div><input type="checkbox" ${done[k]?'checked':''} data-k="${esc(k)}" aria-label="Downloaded"></div></div>`});
+    out+='<div class="group">Key routes (readable offline)</div>';
+    ROUTES.forEach(([n,t,q])=>{out+=`<div class="card"><div class="name">${esc(n)}</div><div class="note">${esc(t)}</div><div class="links"><a class="btn" href="https://www.google.com/maps/dir/?api=1&travelmode=transit&destination=${encodeURIComponent(q)}" target="_blank" rel="noopener">🧭 Directions</a></div></div>`});
+    out+=`<div class="group">Use this app offline</div><div class="card"><div class="note">Open this page once with internet, then it keeps working without signal. On iPhone: Share → <b>Add to Home Screen</b>. On Android: ⋮ → <b>Install app</b> or <b>Add to Home screen</b>. Your ticks are saved on the phone. Links and the map buttons still need internet.</div></div>`;
+    m.innerHTML=out;
   }else{
     let out=CAUTIONS.map(c=>`<div class="warn">${esc(c)}</div>`).join(''),last='';
     TOBOOK.forEach(b=>{
@@ -356,6 +391,7 @@ document.addEventListener('change',e=>{
 const today=new Date();
 day=(today.getFullYear()===2026&&today.getMonth()===10&&today.getDate()>=9&&today.getDate()<=19)?today.getDate():9;
 render();
+try{if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js')}catch(e){}
 </script>
 </body>
 </html>
