@@ -1,5 +1,5 @@
 // Cache para funcionar offline. Ao alterar arquivos, aumente a versão.
-const CACHE = "toronto-v8";
+const CACHE = "toronto-v9";
 const ASSETS = ["./", "index.html", "data.js", "app.js", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png",
   "img/rom.jpg", "img/distillery.jpg", "img/poutine.jpg", "img/yonge.jpg", "img/ikea.jpg", "img/eaton.jpg", "img/vs.jpg", "img/indigo.jpg", "img/bmv.jpg", "img/stlawrence.jpg", "img/queens-park.jpg", "img/stjames.jpg", "img/valuevillage.jpg"];
 

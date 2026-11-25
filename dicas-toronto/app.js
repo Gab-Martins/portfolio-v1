@@ -143,6 +143,24 @@
     b.setAttribute("aria-pressed", !!done[id]);
     b.textContent = done[id] ? "✓ Fui!" : "Marcar como visitado";
   });
+  // pop-up com o disclaimer antes de abrir a playlist
+  const pop = document.createElement("dialog");
+  pop.className = "pop";
+  pop.innerHTML = `<h3>🎧 Antes de dar o play</h3>
+    <p>${esc(G.playlist.texto)}</p>
+    <div class="pedra">Só PE DRA DA</div>
+    <div class="actions">
+      <button class="btn" data-fechar type="button">Fechar</button>
+      <a class="btn" href="${esc(G.playlist.url)}" target="_blank" rel="noopener" data-fechar>▶️ Abrir no Spotify</a>
+    </div>`;
+  document.body.appendChild(pop);
+  pop.addEventListener("click", e => { if (e.target === pop || e.target.closest("[data-fechar]")) pop.close(); });
+  document.addEventListener("click", e => {
+    const a = e.target.closest("a[href]");
+    if (!a || a.closest("dialog") || a.getAttribute("href") !== G.playlist.url || !pop.showModal) return;
+    e.preventDefault();
+    pop.showModal();
+  });
   window.addEventListener("hashchange", render);
   render();
 
