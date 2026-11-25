@@ -43,7 +43,7 @@ window.GUIA = {
         "A butter tart é um doce bem canadense, vale provar pelo menos uma vez."
       ],
       preco: "Incluso no CityPASS",
-      endereco: "100 Queens Park", maps: "Royal Ontario Museum", foto: ""
+      endereco: "100 Queens Park", maps: "Royal Ontario Museum", foto: "img/rom.jpg"
     },
     {
       id: "ripleys", cat: "citypass", nome: "Ripley's Aquarium of Canada", nota: 3, emoji: "🦈",
@@ -64,7 +64,7 @@ window.GUIA = {
         "O prédio rosado no meio do parque é a Assembleia Legislativa de Ontário, de 1893, e tem tour guiado de graça."
       ],
       preco: "Grátis",
-      endereco: "Queen's Park", maps: "Queen's Park Toronto", foto: ""
+      endereco: "Queen's Park", maps: "Queen's Park Toronto", foto: "img/queens-park.jpg"
     },
     {
       id: "uoft", cat: "gratis", nome: "Universidade de Toronto (U of T)", nota: 5, emoji: "🎓",
@@ -148,6 +148,15 @@ window.GUIA = {
       endereco: "100 Queen St W", maps: "Nathan Phillips Square", foto: "", revisar: true
     },
     {
+      id: "stjames", cat: "gratis", nome: "Catedral de St. James", nota: 0, emoji: "⛪",
+      opiniao: "[Sua opinião aqui]",
+      curiosidades: [
+        "É uma catedral anglicana na King St E, pertinho do St. Lawrence Market."
+      ],
+      preco: "Grátis",
+      endereco: "106 King St E", maps: "St. James Cathedral Toronto", foto: "img/stjames.jpg"
+    },
+    {
       id: "yonge", cat: "gratis", nome: "Yonge Street", nota: 5, emoji: "🏙️",
       opiniao: "Minha rua favorita pra passear e ver. Parece cena de filme, fantástico!",
       curiosidades: [
@@ -155,7 +164,7 @@ window.GUIA = {
         "Passa pelo Eaton Centre, pela IKEA, pela BMV e pela Toronto Reference Library."
       ],
       preco: "Grátis",
-      endereco: "Yonge St", maps: "Yonge Dundas Toronto", foto: ""
+      endereco: "Yonge St", maps: "Yonge Dundas Toronto", foto: "img/yonge.jpg"
     },
     {
       id: "reference", cat: "gratis", nome: "Toronto Reference Library", nota: 4, emoji: "📚",
@@ -176,7 +185,7 @@ window.GUIA = {
         "Temporada 2026: de 12/nov a 3/jan (fechado no Natal)."
       ],
       preco: "Grátis antes das 16h, à noite em dias de pico uns CA$16",
-      endereco: "55 Mill St", maps: "Distillery District Toronto", foto: ""
+      endereco: "55 Mill St", maps: "Distillery District Toronto", foto: "img/distillery.jpg"
     },
     {
       id: "andar", cat: "gratis", nome: "Andar na rua", nota: 5, emoji: "🚶‍♀️",
@@ -289,7 +298,7 @@ window.GUIA = {
       id: "poutine", nome: "Poutine (Distillery Winter Village)", tipo: "Prato típico", nota: 3, emoji: "🍟",
       opiniao: "É bom. Esperava mais do único prato nacional canadense? Sim. É estranho minhas batatas fritas estarem molhadas com caldo de carne? Também. Mas é uma experiência, tem que provar kkkk.",
       curiosidades: ["Nasceu em Quebec nos anos 1950: batata frita, queijo coalho (cheese curds) e molho de carne (gravy)."],
-      preco: "", endereco: "55 Mill St", maps: "Distillery District Toronto", foto: ""
+      preco: "", endereco: "55 Mill St", maps: "Distillery District Toronto", foto: "img/poutine.jpg"
     },
     {
       id: "hardrock", nome: "Hard Rock Cafe (Niagara)", tipo: "Americana", nota: 1, emoji: "🎸", naoRecomendo: true,
@@ -304,7 +313,7 @@ window.GUIA = {
       opiniao: "Muito legal! É uma feira de comida num galpão fechado, muito organizada, com muita loja de lembrancinha. Não comi nada porque no dia estava empanturrada, mas parecia ter muita coisa boa. Comprei as lembrancinhas e o maple syrup lá. Achei caro, porém comprei.",
       dica: "Maple syrup vai na mala despachada (passa do limite de 100 ml da bagagem de mão).",
       curiosidades: ["A National Geographic já o elegeu o melhor mercado de comida do mundo."],
-      endereco: "93 Front St E", maps: "St. Lawrence Market", foto: ""
+      endereco: "93 Front St E", maps: "St. Lawrence Market", foto: "img/stlawrence.jpg"
     },
     {
       id: "vaughan", nome: "Vaughan Mills (outlet)", nota: 5, emoji: "🛍️",
@@ -323,7 +332,7 @@ window.GUIA = {
       id: "eaton", nome: "Eaton Centre", nota: 4, emoji: "🏬",
       opiniao: "É O shopping de lá. Muito gigante, então prepara as pernas. Tem todas as lojas imagináveis e uma árvore de Natal enorme. Fui só na Winners e na Victoria's Secret (o resto estava acima do meu orçamento), mas vale a pena ir pra conhecer.",
       curiosidades: ["Olha pro teto: tem uma revoada de gansos canadenses pendurada (a escultura \"Flight Stop\")."],
-      endereco: "220 Yonge St", maps: "CF Toronto Eaton Centre", foto: ""
+      endereco: "220 Yonge St", maps: "CF Toronto Eaton Centre", foto: "img/eaton.jpg"
     },
     {
       id: "winners", nome: "Winners", nota: 4, emoji: "🏷️",
@@ -335,24 +344,24 @@ window.GUIA = {
       id: "vs", nome: "Victoria's Secret (Eaton Centre)", nota: 4, emoji: "💗",
       opiniao: "Comprei só body splash, tinha promo de 5 por CA$55, e dividi com minha mãe, sogra e amigas, então saiu baratinho. Me deram um cartão de desconto que não pude usar, então é seu! São CA$20 off.",
       cupom: "[CÓDIGO DO CUPOM AQUI]",
-      endereco: "Eaton Centre", maps: "Victoria's Secret Eaton Centre", foto: ""
+      endereco: "Eaton Centre", maps: "Victoria's Secret Eaton Centre", foto: "img/vs.jpg"
     },
     {
       id: "ikea", nome: "IKEA Toronto Downtown", nota: 5, emoji: "🕯️",
       opiniao: "Dica muito aleatória, mas fui na IKEA comprar velas aromáticas kkkk. Amo velas e aqui são muito caras; lá encontrei de CA$1 até CA$4 as maiores. Comprei umas 15, não me julgue (AMO VELAS).",
       curiosidades: ["É uma IKEA menor, de centro de cidade, a um quarteirão do Eaton Centre."],
-      endereco: "382 Yonge St", maps: "IKEA Toronto Downtown 382 Yonge St", foto: ""
+      endereco: "382 Yonge St", maps: "IKEA Toronto Downtown 382 Yonge St", foto: "img/ikea.jpg"
     },
     {
       id: "bmv", nome: "BMV Books", nota: 5, emoji: "📖",
       opiniao: "Amei! Livraria com ótimos preços (livros novos e usados). Recomendo muito mais que a Indigo.",
-      endereco: "10 Edward St (perto do Eaton Centre)", maps: "BMV Books 10 Edward St Toronto", foto: ""
+      endereco: "10 Edward St (perto do Eaton Centre)", maps: "BMV Books 10 Edward St Toronto", foto: "img/bmv.jpg"
     },
     {
       id: "indigo", nome: "Indigo (Eaton Centre)", nota: 3, emoji: "📕",
       opiniao: "Fui, mas achei os preços caros. Prefira a BMV, que fica pertinho.",
       curiosidades: ["É a maior rede de livrarias do Canadá."],
-      endereco: "Eaton Centre", maps: "Indigo Eaton Centre", foto: ""
+      endereco: "Eaton Centre", maps: "Indigo Eaton Centre", foto: "img/indigo.jpg"
     },
     {
       id: "valuevillage", nome: "Value Village Boutique", nota: 4, emoji: "👗",
@@ -376,7 +385,7 @@ window.GUIA = {
     { titulo: "Beira do lago", emoji: "🗼", desc: "CN Tower no pôr do sol e o aquário do lado. O Pai fica a uns 10 min a pé.",
       paradas: ["cn-tower", "ripleys", "pai"] },
     { titulo: "Leste: mercado e Natal", emoji: "🎄", desc: "Do St. Lawrence até a Distillery são uns 15 min a pé ou de bonde 504.",
-      paradas: ["stlawrence", "distillery", "poutine"] },
+      paradas: ["stlawrence", "stjames", "distillery", "poutine"] },
     { titulo: "Outlet", emoji: "🛍️", desc: "Reserva meio dia, fica em Vaughan.",
       paradas: ["vaughan"] },
     { titulo: "Niagara", emoji: "💦", desc: "Tudo perto das cataratas.",

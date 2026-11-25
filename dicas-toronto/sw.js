@@ -1,6 +1,7 @@
 // Cache para funcionar offline. Ao alterar arquivos, aumente a versão.
-const CACHE = "toronto-v3";
-const ASSETS = ["./", "index.html", "data.js", "app.js", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png"];
+const CACHE = "toronto-v4";
+const ASSETS = ["./", "index.html", "data.js", "app.js", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png",
+  "img/rom.jpg", "img/distillery.jpg", "img/poutine.jpg", "img/yonge.jpg", "img/ikea.jpg", "img/eaton.jpg", "img/vs.jpg", "img/indigo.jpg", "img/bmv.jpg", "img/stlawrence.jpg", "img/queens-park.jpg", "img/stjames.jpg"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
