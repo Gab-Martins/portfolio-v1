@@ -20,7 +20,7 @@ window.GUIA = {
         "O \"pendurada do lado de fora\" é o EdgeWalk, uma caminhada presa por cabos na borda da torre, a 356 m de altura (uns CA$199)."
       ],
       preco: "Incluso no CityPASS",
-      endereco: "290 Bremner Blvd", maps: "CN Tower Toronto", foto: ""
+      endereco: "290 Bremner Blvd", maps: "CN Tower Toronto", foto: "img/cn-tower.jpg"
     },
     {
       id: "casa-loma", cat: "citypass", nome: "Casa Loma", nota: 5, emoji: "🏰",
@@ -108,7 +108,7 @@ window.GUIA = {
       opiniao: "Um bairro muito interessante, com muitos restaurantes e lojinhas diferentes. Gostei de andar, fazer comprinhas e comer. Lembrando que é um bairro, não tem nada temático. Na minha cabeça ia ser tipo entrar na vila do Kung Fu Panda.",
       dica: "A loja de skincare Reiwatakiya fica aqui (veja em Compras).",
       preco: "Grátis",
-      endereco: "Spadina Ave & Dundas St W", maps: "Chinatown Toronto", foto: ""
+      endereco: "Spadina Ave & Dundas St W", maps: "Chinatown Toronto", foto: "img/chinatown.jpg"
     },
     {
       id: "kensington", cat: "gratis", nome: "Kensington Market", nota: 3, emoji: "🎨",
@@ -205,7 +205,7 @@ window.GUIA = {
         "O show de luzes noturno se chama \"Currents\"."
       ],
       preco: "uns CA$32",
-      endereco: "7005 Niagara Pkwy", maps: "Niagara Parks Power Station", foto: ""
+      endereco: "7005 Niagara Pkwy", maps: "Niagara Parks Power Station", foto: "img/power.jpg"
     },
     {
       id: "festival", cat: "niagara", nome: "Festival das Luzes e fogos", nota: 0, emoji: "🎆",
@@ -242,7 +242,7 @@ window.GUIA = {
       id: "cottage", nome: "The Cottage Cheese", tipo: "Indiana", nota: 5, emoji: "🍛",
       opiniao: "Primeira vez provando comida indiana e amei! Comi o butter chicken e o naan de ervas verdes com alho: 10/10 pro chicken e 7/10 pro naan. Se voltasse, pediria o naan simples. Atendimento 10/10.",
       curiosidades: ["Tem o selo Bib Gourmand do Guia Michelin (comida boa por um preço justo). O butter chicken é o prato-assinatura."],
-      preco: "", endereco: "64 Oxford St (Kensington)", maps: "The Cottage Cheese 64 Oxford St Toronto", foto: "", revisar: true
+      preco: "", endereco: "64 Oxford St (Kensington)", maps: "The Cottage Cheese 64 Oxford St Toronto", foto: "img/cottage.jpg", revisar: true
     },
     {
       id: "pai", nome: "Pai", tipo: "Tailandesa", nota: 5, emoji: "🍜",
@@ -315,7 +315,7 @@ window.GUIA = {
       id: "reiwatakiya", nome: "Reiwatakiya (skincare)", nota: 5, emoji: "🧴",
       opiniao: "Aqui tive que me segurar muito, porque os preços estavam MARAVILHOSOS. Nem tava na promoção, e custava uns 25% do que custa no Brasil.",
       curiosidades: ["É uma loja japonesa de cosméticos, skincare e produtos de casa. Tem outra unidade na 237 Queen St W."],
-      endereco: "399 Spadina Ave", maps: "Reiwatakiya 399 Spadina Ave Toronto", foto: ""
+      endereco: "399 Spadina Ave", maps: "Reiwatakiya 399 Spadina Ave Toronto", foto: "img/reiwatakiya.jpg"
     },
     {
       id: "eaton", nome: "Eaton Centre", nota: 4, emoji: "🏬",
