@@ -39,8 +39,7 @@ window.GUIA = {
       opiniao: "O museu é enorme e tem muuuuita coisa legal. Minhas seções favoritas foram Grécia, China e os dinossauros, muito vibes Noite no Museu. Quando fui tinha passeio escolar, por isso uma estrela a menos, as crianças tavam me irritando.",
       dica: "Tem uma cafeteria lá dentro, muito gostosa. Recomendo a butter tart (tortinha de nozes com maple syrup). Não recomendo o croissant.",
       curiosidades: [
-        "A fachada de cristal e alumínio (\"The Crystal\") foi projetada pelo arquiteto Daniel Libeskind e inaugurada em 2007.",
-        "A butter tart é um doce bem canadense, vale provar pelo menos uma vez."
+        "A fachada de cristal e alumínio (\"The Crystal\") foi projetada pelo arquiteto Daniel Libeskind e inaugurada em 2007."
       ],
       preco: "Incluso no CityPASS",
       endereco: "100 Queens Park", maps: "Royal Ontario Museum", foto: "img/rom.jpg"
@@ -72,8 +71,7 @@ window.GUIA = {
       dica: "Fiz o campus nessa ordem: Knox College, University College, Convocation Hall, Soldiers' Tower e Hart House (passa por baixo do arco) e por último o Trinity College. De lá são uns 5 min a pé até o ROM.",
       curiosidades: [
         "O Great Hall da Hart House é a comparação clássica com o salão de Hogwarts.",
-        "A Soldiers' Tower é um memorial aos membros da universidade mortos nas guerras mundiais e tem um carrilhão de sinos.",
-        "A University College começou a funcionar no prédio atual em 1859."
+        "A Soldiers' Tower é um memorial aos membros da universidade mortos nas guerras mundiais e tem um carrilhão de sinos."
       ],
       preco: "Grátis",
       endereco: "King's College Circle", maps: "University College Toronto", foto: ""
@@ -82,8 +80,7 @@ window.GUIA = {
       id: "fisher", cat: "gratis", nome: "Thomas Fisher Rare Book Library", nota: 3, emoji: "📜",
       opiniao: "Achei interessante conhecer e ver a exposição, mas confesso que esperava mais, a parte aberta ao público é pequena. Vale a visita se estiver no caminho de outra atividade.",
       curiosidades: [
-        "É a maior biblioteca de livros raros do Canadá, com uns 700 mil volumes.",
-        "Fica dentro do campus da U of T, então combina com o passeio pelas universidades."
+        "É a maior biblioteca de livros raros do Canadá, com uns 700 mil volumes."
       ],
       preco: "Grátis",
       endereco: "120 St George St", maps: "Thomas Fisher Rare Book Library", foto: ""
@@ -92,8 +89,7 @@ window.GUIA = {
       id: "philosophers", cat: "gratis", nome: "Philosopher's Walk", nota: 4, emoji: "🍂",
       opiniao: "Um caminho bonitinho pelo campus, gostoso de passear.",
       curiosidades: [
-        "O caminho segue o traçado do Taddle Creek, um riacho que hoje corre canalizado embaixo da terra.",
-        "Liga o campus da U of T à Bloor Street, saindo bem ao lado do ROM."
+        "O caminho segue o traçado do Taddle Creek, um riacho que hoje corre canalizado embaixo da terra."
       ],
       preco: "Grátis",
       endereco: "Entre a Hoskin Ave e a Bloor St W", maps: "Philosopher's Walk Toronto", foto: "", revisar: true
@@ -102,8 +98,7 @@ window.GUIA = {
       id: "baldwin", cat: "gratis", nome: "Baldwin Steps", nota: 4, emoji: "🪜",
       opiniao: "É uma escada que fica atrás da Casa Loma, com uma vista bonita. Antes de chegar tem um mini parque/passeio que achei bonito de ver.",
       curiosidades: [
-        "São 110 degraus, construídos em 1913. Lá de cima dá pra ver o skyline até a CN Tower.",
-        "Ficam entre a Casa Loma e o Spadina Museum."
+        "São 110 degraus, construídos em 1913. Lá de cima dá pra ver o skyline até a CN Tower."
       ],
       preco: "Grátis",
       endereco: "Spadina Rd & Davenport Rd", maps: "Baldwin Steps Toronto", foto: ""
@@ -112,9 +107,6 @@ window.GUIA = {
       id: "chinatown", cat: "gratis", nome: "Chinatown", nota: 4, emoji: "🏮",
       opiniao: "Um bairro muito interessante, com muitos restaurantes e lojinhas diferentes. Gostei de andar, fazer comprinhas e comer. Lembrando que é um bairro, não tem nada temático. Na minha cabeça ia ser tipo entrar na vila do Kung Fu Panda.",
       dica: "A loja de skincare Reiwatakiya fica aqui (veja em Compras).",
-      curiosidades: [
-        "O coração do bairro é o cruzamento da Spadina Ave com a Dundas St W."
-      ],
       preco: "Grátis",
       endereco: "Spadina Ave & Dundas St W", maps: "Chinatown Toronto", foto: ""
     },
@@ -150,9 +142,6 @@ window.GUIA = {
     {
       id: "stjames", cat: "gratis", nome: "Catedral de St. James", nota: 0, emoji: "⛪",
       opiniao: "[Sua opinião aqui]",
-      curiosidades: [
-        "É uma catedral anglicana na King St E, pertinho do St. Lawrence Market."
-      ],
       preco: "Grátis",
       endereco: "106 King St E", maps: "St. James Cathedral Toronto", foto: "img/stjames.jpg"
     },
@@ -160,8 +149,7 @@ window.GUIA = {
       id: "yonge", cat: "gratis", nome: "Yonge Street", nota: 5, emoji: "🏙️",
       opiniao: "Minha rua favorita pra passear e ver. Parece cena de filme, fantástico!",
       curiosidades: [
-        "Já foi considerada pelo Guinness a rua mais longa do mundo.",
-        "Passa pelo Eaton Centre, pela IKEA, pela BMV e pela Toronto Reference Library."
+        "Já foi considerada pelo Guinness a rua mais longa do mundo."
       ],
       preco: "Grátis",
       endereco: "Yonge St", maps: "Yonge Dundas Toronto", foto: "img/yonge.jpg"
@@ -170,8 +158,7 @@ window.GUIA = {
       id: "reference", cat: "gratis", nome: "Toronto Reference Library", nota: 4, emoji: "📚",
       opiniao: "Gostei de conhecer, achei bem bonita. Curioso que eles têm computadores pra uso gratuito. Aproveita pra sentar e descansar um pouco.",
       curiosidades: [
-        "Tem uma sala dedicada a Sherlock Holmes (coleção Arthur Conan Doyle), no 5º andar. Pode estar fechada por reforma.",
-        "Sobe pelos elevadores de vidro pra ver o átrio de cima."
+        "Tem uma sala dedicada a Sherlock Holmes (coleção Arthur Conan Doyle), no 5º andar. Pode estar fechada por reforma."
       ],
       preco: "Grátis",
       endereco: "789 Yonge St", maps: "Toronto Reference Library", foto: ""
@@ -263,7 +250,6 @@ window.GUIA = {
     {
       id: "dualcitizen", nome: "Dual Citizen (Sheraton Centre)", tipo: "Hambúrguer", nota: 5, emoji: "🍔",
       opiniao: "O hambúrguer de wagyu foi o melhor que já comi na vida. Caro, porém vale cada centavo. Quando voltar, comerei com toda certeza.",
-      curiosidades: ["Fica no lobby do hotel Sheraton Centre, bem em frente ao letreiro de Toronto."],
       preco: "CA$10 a 40", endereco: "123 Queen St W", maps: "Dual Citizen Sheraton Centre Toronto", foto: ""
     },
     {
@@ -337,7 +323,6 @@ window.GUIA = {
     {
       id: "winners", nome: "Winners", nota: 4, emoji: "🏷️",
       opiniao: "Uma loja de departamento com várias marcas, inclusive famosas. Nem tudo é barato, mas se procurar um pouco dá pra achar itens que valem a pena.",
-      curiosidades: ["É do mesmo grupo da TJ Maxx."],
       endereco: "Eaton Centre", maps: "Winners Eaton Centre", foto: ""
     },
     {
@@ -349,7 +334,6 @@ window.GUIA = {
     {
       id: "ikea", nome: "IKEA Toronto Downtown", nota: 5, emoji: "🕯️",
       opiniao: "Dica muito aleatória, mas fui na IKEA comprar velas aromáticas kkkk. Amo velas e aqui são muito caras; lá encontrei de CA$1 até CA$4 as maiores. Comprei umas 15, não me julgue (AMO VELAS).",
-      curiosidades: ["É uma IKEA menor, de centro de cidade, a um quarteirão do Eaton Centre."],
       endereco: "382 Yonge St", maps: "IKEA Toronto Downtown 382 Yonge St", foto: "img/ikea.jpg"
     },
     {
@@ -360,7 +344,6 @@ window.GUIA = {
     {
       id: "indigo", nome: "Indigo (Eaton Centre)", nota: 3, emoji: "📕",
       opiniao: "Fui, mas achei os preços caros. Prefira a BMV, que fica pertinho.",
-      curiosidades: ["É a maior rede de livrarias do Canadá."],
       endereco: "Eaton Centre", maps: "Indigo Eaton Centre", foto: "img/indigo.jpg"
     },
     {
