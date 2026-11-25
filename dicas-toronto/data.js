@@ -32,7 +32,7 @@ window.GUIA = {
         "Tem passagens secretas e um túnel subterrâneo até os estábulos."
       ],
       preco: "Incluso no CityPASS",
-      endereco: "1 Austin Terrace", maps: "Casa Loma Toronto", foto: ""
+      endereco: "1 Austin Terrace", maps: "Casa Loma Toronto", foto: "img/casa-loma.jpg", credito: { texto: "Bintyamin20248 / Wikimedia Commons (CC0)", url: "https://commons.wikimedia.org/wiki/File:Casa_Loma_Toronto,_Canada.jpg" }
     },
     {
       id: "rom", cat: "citypass", nome: "Royal Ontario Museum (ROM)", nota: 4, emoji: "🦕",
@@ -275,7 +275,7 @@ window.GUIA = {
     {
       id: "rom-cafe", nome: "Cafeteria do ROM", tipo: "Café", nota: 4, emoji: "🥧",
       opiniao: "Recomendo a butter tart (tortinha de nozes com maple syrup). Não recomendo o croissant.",
-      preco: "", endereco: "Dentro do ROM", maps: "Royal Ontario Museum", foto: ""
+      preco: "", endereco: "Dentro do ROM", maps: "Royal Ontario Museum", foto: "img/rom-cafe.jpg"
     },
     {
       id: "timhortons", nome: "Tim Hortons", tipo: "Café", nota: 3, emoji: "☕",
