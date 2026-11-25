@@ -342,7 +342,7 @@ window.GUIA = {
     },
     {
       id: "vs", nome: "Victoria's Secret (Eaton Centre)", nota: 4, emoji: "💗",
-      opiniao: "Comprei só body splash, tinha promo de 5 por CA$55, e dividi com minha mãe, sogra e amigas, então saiu baratinho. Me deram um cartão de desconto que não pude usar, então é seu! São CA$20 off.",
+      opiniao: "Comprei só body splash, tinha promo de 5 por CA$55, e dividi com minha mãe, sogra e amigas, então saiu baratinho. Me deram um cartão de desconto que não pude usar, então é seu! São CA$25 off em compras a partir de CA$75.",
       cupom: "[CÓDIGO DO CUPOM AQUI]",
       endereco: "Eaton Centre", maps: "Victoria's Secret Eaton Centre", foto: "img/vs.jpg"
     },
@@ -367,7 +367,7 @@ window.GUIA = {
       id: "valuevillage", nome: "Value Village Boutique", nota: 4, emoji: "👗",
       opiniao: "É um brechó, e fui na versão boutique. Muuuita opção e coisa pra ver, e as roupas pareciam em boas condições. Comprei algumas, preço ótimo. Os sapatos achei muito surradinhos, não acho que valham a pena.",
       dica: "O Graffiti Alley fica logo atrás.",
-      endereco: "639 Queen St W", maps: "Value Village Boutique 639 Queen St W", foto: "", revisar: true
+      endereco: "639 Queen St W", maps: "Value Village Boutique 639 Queen St W", foto: "img/valuevillage.jpg", revisar: true
     }
   ],
 
