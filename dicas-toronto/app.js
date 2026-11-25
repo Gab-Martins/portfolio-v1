@@ -27,6 +27,7 @@
     ].join("");
     return `<article class="card" id="item-${i.id}">
       <div class="ph c${(n || 0) % 6}">${i.foto ? `<img src="${esc(i.foto)}" alt="${esc(i.nome)}" loading="lazy">` : i.emoji || "📍"}</div>
+      ${i.credito ? `<div class="credito">Foto: <a href="${esc(i.credito.url)}" target="_blank" rel="noopener">${esc(i.credito.texto)}</a></div>` : ""}
       <div class="body">
         <h3>${esc(i.nome)}</h3>
         <div class="meta">${stars(i.nota)}${tags}${i.preco ? `<span>💲 ${esc(i.preco)}</span>` : ""}</div>

@@ -309,7 +309,7 @@ window.GUIA = {
       opiniao: "Fica em outra cidade. Levei uns 1h20 de metrô e ônibus, mas achei tranquilo, fui ouvindo uma musiquinha. Pra mim compensou muito! Comprei tênis da Nike (tinha mais opções masculinas legais, então comprei alguns pro meu querido e só um pra mim), roupas da Tommy, Guess, Adidas e Old Navy. Na minha opinião o que mais compensou foi a Tommy, com até 85% de desconto.",
       dica: "Na Tommy, no final da compra se cadastra com o email: dão mais 15% em cima do valor final. Algumas lojas lá têm o mesmo preço de qualquer shopping, então foca nas que são factory/outlet de verdade.",
       curiosidades: ["Como chegar: metrô Linha 1 até Vaughan Metropolitan Centre e depois um ônibus curto ou Uber. Confere a rota no Google Maps."],
-      endereco: "1 Bass Pro Mills Dr, Vaughan", maps: "Vaughan Mills", foto: ""
+      endereco: "1 Bass Pro Mills Dr, Vaughan", maps: "Vaughan Mills", foto: "img/vaughan.jpg", credito: { texto: "Glenn Samonte / Wikimedia Commons (CC BY 4.0)", url: "https://commons.wikimedia.org/wiki/File:Vaughan_Mills,_Entrance_2_(54634951476).jpg" }
     },
     {
       id: "reiwatakiya", nome: "Reiwatakiya (skincare)", nota: 5, emoji: "🧴",
