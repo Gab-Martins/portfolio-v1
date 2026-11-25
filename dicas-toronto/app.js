@@ -17,16 +17,16 @@
   const mapsUrl = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
   const catLabel = { citypass: "CityPASS", gratis: "Grátis", niagara: "Niagara" };
 
-  function card(i) {
+  function card(i, n) {
     const curio = i.curiosidades && i.curiosidades.length
       ? `<div class="box curio"><b>Curiosidades</b><ul>${i.curiosidades.map(c => `<li>${esc(c)}</li>`).join("")}</ul></div>` : "";
     const tags = [
-      i.cat ? `<span class="tag">${catLabel[i.cat]}</span>` : "",
+      i.cat ? `<span class="tag ${i.cat}">${catLabel[i.cat]}</span>` : "",
       i.tipo ? `<span class="tag">${esc(i.tipo)}</span>` : "",
       i.naoRecomendo ? `<span class="tag no">Não recomendo</span>` : ""
     ].join("");
     return `<article class="card" id="item-${i.id}">
-      <div class="ph">${i.foto ? `<img src="${esc(i.foto)}" alt="${esc(i.nome)}" loading="lazy">` : i.emoji || "📍"}</div>
+      <div class="ph c${(n || 0) % 6}">${i.foto ? `<img src="${esc(i.foto)}" alt="${esc(i.nome)}" loading="lazy">` : i.emoji || "📍"}</div>
       <div class="body">
         <h3>${esc(i.nome)}</h3>
         <div class="meta">${stars(i.nota)}${tags}${i.preco ? `<span>💲 ${esc(i.preco)}</span>` : ""}</div>
@@ -55,7 +55,7 @@
       const res = items.filter(i =>
         (f === "todos" || i.cat === f || (f === "pendentes" && !done[i.id])) &&
         (!q || (i.nome + " " + i.opiniao + " " + (i.tipo || "")).toLowerCase().includes(q)));
-      list.innerHTML = res.length ? res.map(card).join("") : `<p class="empty">Nada encontrado.</p>`;
+      list.innerHTML = res.length ? res.map((x, n) => card(x, n)).join("") : `<p class="empty">Nada encontrado.</p>`;
     };
     app.querySelector(".search").addEventListener("input", e => { q = e.target.value.toLowerCase().trim(); draw(); });
     app.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
@@ -67,24 +67,24 @@
   }
 
   function inicio() {
-    const total = all.length, feitos = all.filter(i => done[i.id]).length;
+    const tiles = [
+      ["#roteiros", "🗺️", "Roteiros", "Lugares pertinho um do outro", "c0"],
+      ["#lugares", "📍", "Lugares", `${G.lugares.length} passeios`, "c1"],
+      ["#comida", "🍽️", "Comida", `${G.comida.length} lugares`, "c3"],
+      ["#compras", "🛍️", "Compras", `${G.compras.length} lojas`, "c2"],
+      ["#dicas", "🚇", "Transporte", "Presto e como andar", "c4"],
+      [G.playlist.url, "🎧", "Playlist", "Pra ouvir no trem", "c5"]
+    ];
     app.innerHTML = `
-      <div class="hero"><p>${esc(G.intro.conselho)}</p></div>
-      <div class="progress">Você já visitou ${feitos} de ${total} sugestões
-        <div class="bar"><i style="width:${total ? (feitos / total) * 100 : 0}%"></i></div></div>
-      <div class="grid">
-        <a class="tile" href="#roteiros"><span>🗺️</span><b>Roteiros</b><small>Lugares próximos, agrupados</small></a>
-        <a class="tile" href="#lugares"><span>📍</span><b>Lugares</b><small>${G.lugares.length} passeios</small></a>
-        <a class="tile" href="#comida"><span>🍽️</span><b>Comida</b><small>${G.comida.length} lugares</small></a>
-        <a class="tile" href="#compras"><span>🛍️</span><b>Compras</b><small>${G.compras.length} lojas</small></a>
-        <a class="tile" href="#dicas"><span>🚇</span><b>Transporte</b><small>Presto e como andar</small></a>
-        <a class="tile" href="${esc(G.playlist.url)}" target="_blank" rel="noopener"><span>🎧</span><b>Playlist</b><small>Pra ouvir no trem</small></a>
+      <div class="hero"><p>${esc(G.intro.conselho)}</p><div class="sig">com carinho, Gab 🍁</div></div>
+      <div class="grid">${tiles.map(([h, e, t, s, c]) =>
+        `<a class="tile ${c}" href="${esc(h)}"${h.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}><span>${e}</span><b>${t}</b><small>${s}</small></a>`).join("")}
       </div>`;
   }
 
   function roteiros() {
     app.innerHTML = `<p style="color:var(--muted);margin:4px 0 0">Lugares que ficam perto uns dos outros. Monta o dia como quiser!</p>` +
-      G.roteiros.map(r => `<section class="route">
+      G.roteiros.map((r, n) => `<section class="route r${n % 6}">
         <h3>${r.emoji} ${esc(r.titulo)}</h3><p>${esc(r.desc)}</p>
         <ol>${r.paradas.map(id => byId[id]).filter(Boolean).map(i =>
           `<li><a href="#${sectionOf(i.id)}/${i.id}">${esc(i.nome)}</a>${done[i.id] ? " ✓" : ""}</li>`).join("")}</ol>

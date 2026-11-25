@@ -3,7 +3,7 @@
 
 window.GUIA = {
   intro: {
-    titulo: "Toronto da Paula",
+    titulo: "Toronto por Gab",
     subtitulo: "Tudo que eu fiz, comi e comprei — com nota, opinião e dica.",
     conselho: "Minha maior dica: aproveita a vista e não esquece que tudo bem descansar. Afinal, são férias!"
   },
