@@ -315,7 +315,7 @@ window.GUIA = {
       id: "reiwatakiya", nome: "Reiwatakiya (skincare)", nota: 5, emoji: "🧴",
       opiniao: "Aqui tive que me segurar muito, porque os preços estavam MARAVILHOSOS. Nem tava na promoção, e custava uns 25% do que custa no Brasil.",
       curiosidades: ["É uma loja japonesa de cosméticos, skincare e produtos de casa. Tem outra unidade na 237 Queen St W."],
-      endereco: "399 Spadina Ave", maps: "Reiwatakiya 399 Spadina Ave Toronto", foto: "img/reiwatakiya.jpg"
+      endereco: "399 Spadina Ave", maps: "Reiwatakiya 399 Spadina Ave Toronto", foto: ""
     },
     {
       id: "eaton", nome: "Eaton Centre", nota: 4, emoji: "🏬",
@@ -333,17 +333,17 @@ window.GUIA = {
       id: "vs", nome: "Victoria's Secret (Eaton Centre)", nota: 4, emoji: "💗",
       opiniao: "Comprei só body splash, tinha promo de 5 por CA$55, e dividi com minha mãe, sogra e amigas, então saiu baratinho. Me deram um cartão de desconto que não pude usar, então é seu! São CA$25 off em compras a partir de CA$75.",
       cupom: "[CÓDIGO DO CUPOM AQUI]",
-      endereco: "Eaton Centre", maps: "Victoria's Secret Eaton Centre", foto: "img/vs.jpg"
+      endereco: "Eaton Centre", maps: "Victoria's Secret Eaton Centre", foto: ""
     },
     {
       id: "ikea", nome: "IKEA Toronto Downtown", nota: 5, emoji: "🕯️",
       opiniao: "Dica muito aleatória, mas fui na IKEA comprar velas aromáticas kkkk. Amo velas e aqui são muito caras; lá encontrei de CA$1 até CA$4 as maiores. Comprei umas 15, não me julgue (AMO VELAS).",
-      endereco: "382 Yonge St", maps: "IKEA Toronto Downtown 382 Yonge St", foto: "img/ikea.jpg"
+      endereco: "382 Yonge St", maps: "IKEA Toronto Downtown 382 Yonge St", foto: ""
     },
     {
       id: "bmv", nome: "BMV Books", nota: 5, emoji: "📖",
       opiniao: "Amei! Livraria com ótimos preços (livros novos e usados). Recomendo muito mais que a Indigo.",
-      endereco: "10 Edward St (perto do Eaton Centre)", maps: "BMV Books 10 Edward St Toronto", foto: "img/bmv.jpg"
+      endereco: "10 Edward St (perto do Eaton Centre)", maps: "BMV Books 10 Edward St Toronto", foto: ""
     },
     {
       id: "indigo", nome: "Indigo (Eaton Centre)", nota: 3, emoji: "📕",
