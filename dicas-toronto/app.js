@@ -53,7 +53,7 @@
     const list = app.querySelector("#list");
     const draw = () => {
       const res = items.filter(i =>
-        (f === "todos" || i.cat === f || (f === "pendentes" && !done[i.id])) &&
+        (f === "todos" || i.cat === f) &&
         (!q || (i.nome + " " + i.opiniao + " " + (i.tipo || "")).toLowerCase().includes(q)));
       list.innerHTML = res.length ? res.map((x, n) => card(x, n)).join("") : `<p class="empty">Nada encontrado.</p>`;
     };
@@ -116,9 +116,9 @@
   const routes = {
     inicio,
     roteiros,
-    lugares: () => listView(G.lugares, [["todos", "Todos"], ["citypass", "CityPASS"], ["gratis", "Grátis"], ["niagara", "Niagara"], ["pendentes", "Ainda não fui"]]),
-    comida: () => listView(G.comida, [["todos", "Todos"], ["pendentes", "Ainda não fui"]]),
-    compras: () => listView(G.compras, [["todos", "Todos"], ["pendentes", "Ainda não fui"]]),
+    lugares: () => listView(G.lugares, [["todos", "Todos"], ["citypass", "CityPASS"], ["gratis", "Grátis"], ["niagara", "Niagara"]]),
+    comida: () => listView(G.comida),
+    compras: () => listView(G.compras),
     dicas
   };
   const titles = { inicio: G.intro.titulo, roteiros: "Roteiros", lugares: "Lugares", comida: "Comida", compras: "Compras", dicas: "Dicas" };
