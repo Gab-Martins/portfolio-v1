@@ -46,7 +46,7 @@
   function listView(items, filters) {
     let q = "", f = "todos";
     app.innerHTML = `
-      <input class="search" type="search" placeholder="Buscar…" aria-label="Buscar">
+      <input class="search" type="search" placeholder="Buscar" aria-label="Buscar">
       ${filters ? `<div class="chips">${filters.map(([k, l]) => `<button class="chip" data-f="${k}" aria-pressed="${k === f}">${l}</button>`).join("")}</div>` : ""}
       <div id="list"></div>
       <p class="note">Valores aproximados pesquisados em nov/2026. Confirme no site oficial antes de ir.</p>`;

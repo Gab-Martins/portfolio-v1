@@ -1,5 +1,5 @@
 // Cache para funcionar offline. Ao alterar arquivos, aumente a versão.
-const CACHE = "toronto-v2";
+const CACHE = "toronto-v3";
 const ASSETS = ["./", "index.html", "data.js", "app.js", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png"];
 
 self.addEventListener("install", e => {
