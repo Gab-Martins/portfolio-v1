@@ -142,6 +142,9 @@ window.GUIA = {
     {
       id: "stjames", cat: "gratis", nome: "Catedral de St. James", nota: 0, emoji: "⛪",
       opiniao: "[Sua opinião aqui]",
+      curiosidades: [
+        "A congregação é a mais antiga da cidade, de 1797. O prédio atual é a quarta igreja no mesmo terreno e abriu em 1853."
+      ],
       preco: "Grátis",
       endereco: "106 King St E", maps: "St. James Cathedral Toronto", foto: "img/stjames.jpg"
     },
@@ -317,7 +320,8 @@ window.GUIA = {
     {
       id: "eaton", nome: "Eaton Centre", nota: 4, emoji: "🏬",
       opiniao: "É O shopping de lá. Muito gigante, então prepara as pernas. Tem todas as lojas imagináveis e uma árvore de Natal enorme. Fui só na Winners e na Victoria's Secret (o resto estava acima do meu orçamento), mas vale a pena ir pra conhecer.",
-      curiosidades: ["Olha pro teto: tem uma revoada de gansos canadenses pendurada (a escultura \"Flight Stop\")."],
+      curiosidades: ["Olha pro teto: tem uma revoada de gansos canadenses pendurada (a escultura \"Flight Stop\").",
+        "O nome vem da Eaton's, a rede de lojas de departamento que foi a âncora do shopping e fechou no fim dos anos 1990."],
       endereco: "220 Yonge St", maps: "CF Toronto Eaton Centre", foto: "img/eaton.jpg"
     },
     {
