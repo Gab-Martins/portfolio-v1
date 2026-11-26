@@ -1,7 +1,7 @@
 // Cache para funcionar offline. Ao alterar arquivos, aumente a versão.
-const CACHE = "toronto-v13";
+const CACHE = "toronto-v14";
 const ASSETS = ["./", "index.html", "data.js", "app.js", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png",
-  "img/rom.jpg", "img/distillery.jpg", "img/poutine.jpg", "img/yonge.jpg", "img/eaton.jpg", "img/indigo.jpg", "img/stlawrence.jpg", "img/queens-park.jpg", "img/stjames.jpg", "img/valuevillage.jpg", "img/cn-tower.jpg", "img/power.jpg", "img/cottage.jpg", "img/chinatown.jpg", "img/vaughan.jpg", "img/casa-loma.jpg", "img/rom-cafe.jpg"];
+  "img/andar.jpg", "img/baldwin.jpg", "img/casa-loma.jpg", "img/cataratas.jpg", "img/chinatown.jpg", "img/cn-tower.jpg", "img/cottage.jpg", "img/distillery.jpg", "img/eaton.jpg", "img/festival.jpg", "img/fisher.jpg", "img/hardrock.jpg", "img/indigo.jpg", "img/kensington.jpg", "img/poutine.jpg", "img/power.jpg", "img/queens-park.jpg", "img/reference.jpg", "img/ripleys.jpg", "img/rom-cafe.jpg", "img/rom.jpg", "img/skywheel.jpg", "img/stjames.jpg", "img/stlawrence.jpg", "img/uoft.jpg", "img/vaughan.jpg", "img/yonge.jpg"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));

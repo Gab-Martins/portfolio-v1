@@ -32,7 +32,7 @@ window.GUIA = {
         "Tem passagens secretas e um túnel subterrâneo até os estábulos."
       ],
       preco: "Incluso no CityPASS",
-      endereco: "1 Austin Terrace", maps: "Casa Loma Toronto", foto: "img/casa-loma.jpg", credito: { texto: "Bintyamin20248 / Wikimedia Commons (CC0)", url: "https://commons.wikimedia.org/wiki/File:Casa_Loma_Toronto,_Canada.jpg" }
+      endereco: "1 Austin Terrace", maps: "Casa Loma Toronto", foto: "img/casa-loma.jpg"
     },
     {
       id: "rom", cat: "citypass", nome: "Royal Ontario Museum (ROM)", nota: 4, emoji: "🦕",
@@ -52,7 +52,7 @@ window.GUIA = {
         "O túnel dos tubarões (Dangerous Lagoon) tem a maior esteira rolante subaquática da América do Norte."
       ],
       preco: "Incluso no CityPASS",
-      endereco: "288 Bremner Blvd", maps: "Ripley's Aquarium of Canada", foto: ""
+      endereco: "288 Bremner Blvd", maps: "Ripley's Aquarium of Canada", foto: "img/ripleys.jpg"
     },
 
     // ---------- Grátis ----------
@@ -74,7 +74,7 @@ window.GUIA = {
         "A Soldiers' Tower é um memorial aos membros da universidade mortos nas guerras mundiais e tem um carrilhão de sinos."
       ],
       preco: "Grátis",
-      endereco: "King's College Circle", maps: "University College Toronto", foto: ""
+      endereco: "King's College Circle", maps: "University College Toronto", foto: "img/uoft.jpg"
     },
     {
       id: "fisher", cat: "gratis", nome: "Thomas Fisher Rare Book Library", nota: 3, emoji: "📜",
@@ -83,7 +83,7 @@ window.GUIA = {
         "É a maior biblioteca de livros raros do Canadá, com uns 700 mil volumes."
       ],
       preco: "Grátis",
-      endereco: "120 St George St", maps: "Thomas Fisher Rare Book Library", foto: ""
+      endereco: "120 St George St", maps: "Thomas Fisher Rare Book Library", foto: "img/fisher.jpg"
     },
     {
       id: "philosophers", cat: "gratis", nome: "Philosopher's Walk", nota: 4, emoji: "🍂",
@@ -101,7 +101,7 @@ window.GUIA = {
         "São 110 degraus, construídos em 1913. Lá de cima dá pra ver o skyline até a CN Tower."
       ],
       preco: "Grátis",
-      endereco: "Spadina Rd & Davenport Rd", maps: "Baldwin Steps Toronto", foto: ""
+      endereco: "Spadina Rd & Davenport Rd", maps: "Baldwin Steps Toronto", foto: "img/baldwin.jpg"
     },
     {
       id: "chinatown", cat: "gratis", nome: "Chinatown", nota: 4, emoji: "🏮",
@@ -118,7 +118,7 @@ window.GUIA = {
         "É Sítio Histórico Nacional do Canadá desde 2006."
       ],
       preco: "Grátis",
-      endereco: "Kensington Ave & Augusta Ave", maps: "Kensington Market Toronto", foto: "", revisar: true
+      endereco: "Kensington Ave & Augusta Ave", maps: "Kensington Market Toronto", foto: "img/kensington.jpg", revisar: true
     },
     {
       id: "graffiti", cat: "gratis", nome: "Graffiti Alley", nota: 0, emoji: "🖌️",
@@ -164,7 +164,7 @@ window.GUIA = {
         "Tem uma sala dedicada a Sherlock Holmes (coleção Arthur Conan Doyle), no 5º andar. Pode estar fechada por reforma."
       ],
       preco: "Grátis",
-      endereco: "789 Yonge St", maps: "Toronto Reference Library", foto: ""
+      endereco: "789 Yonge St", maps: "Toronto Reference Library", foto: "img/reference.jpg"
     },
     {
       id: "distillery", cat: "gratis", nome: "Distillery Winter Village", nota: 5, emoji: "🎄",
@@ -181,7 +181,7 @@ window.GUIA = {
       id: "andar", cat: "gratis", nome: "Andar na rua", nota: 5, emoji: "🚶‍♀️",
       opiniao: "Eu gosto muito de andar, e Toronto tem coisa bonita em cada esquina. O que mais fiz foi andar por aí e apreciar tudo.",
       dica: "Vai de tênis de corrida!",
-      preco: "Grátis", endereco: "", maps: "", foto: ""
+      preco: "Grátis", endereco: "", maps: "", foto: "img/andar.jpg"
     },
 
     // ---------- Niagara ----------
@@ -194,7 +194,7 @@ window.GUIA = {
         "Os passeios de barco só funcionam na temporada quente."
       ],
       preco: "Grátis pra ver",
-      endereco: "Niagara Parkway", maps: "Horseshoe Falls Niagara", foto: ""
+      endereco: "Niagara Parkway", maps: "Horseshoe Falls Niagara", foto: "img/cataratas.jpg"
     },
     {
       id: "power", cat: "niagara", nome: "Niagara Parks Power Station", nota: 3, emoji: "⚡",
@@ -215,7 +215,7 @@ window.GUIA = {
         "Os fogos dependem do clima, então confere o calendário oficial antes."
       ],
       preco: "Grátis",
-      endereco: "Queen Victoria Park", maps: "Queen Victoria Park Niagara Falls", foto: "", revisar: true
+      endereco: "Queen Victoria Park", maps: "Queen Victoria Park Niagara Falls", foto: "img/festival.jpg", revisar: true
     },
     {
       id: "skywheel", cat: "niagara", nome: "Clifton Hill e roda-gigante (SkyWheel)", nota: 0, emoji: "🎡",
@@ -224,7 +224,7 @@ window.GUIA = {
         "A SkyWheel está incluída no Clifton Hill Fun Pass, junto com outras atrações da rua."
       ],
       preco: "Fun Pass, uns CA$35",
-      endereco: "4950 Clifton Hill", maps: "Niagara SkyWheel", foto: ""
+      endereco: "4950 Clifton Hill", maps: "Niagara SkyWheel", foto: "img/skywheel.jpg"
     },
     {
       id: "stcatharines", cat: "niagara", nome: "St. Catharines (dica do Javier)", nota: 0, emoji: "⛵",
@@ -292,7 +292,7 @@ window.GUIA = {
     {
       id: "hardrock", nome: "Hard Rock Cafe (Niagara)", tipo: "Americana", nota: 1, emoji: "🎸", naoRecomendo: true,
       opiniao: "Não recomendo: superfaturado e nada demais. Fui pela experiência de nunca ter ido, e a decoração é muito legal, mas nem rock tava tocando. Não valeu o preço pra mim. Atendimento 10/10, isso sim.",
-      preco: "", endereco: "Niagara Falls", maps: "Hard Rock Cafe Niagara Falls Canada", foto: ""
+      preco: "", endereco: "Niagara Falls", maps: "Hard Rock Cafe Niagara Falls Canada", foto: "img/hardrock.jpg"
     }
   ],
 
@@ -354,7 +354,7 @@ window.GUIA = {
       id: "valuevillage", nome: "Value Village Boutique", nota: 4, emoji: "👗",
       opiniao: "É um brechó, e fui na versão boutique. Muuuita opção e coisa pra ver, e as roupas pareciam em boas condições. Comprei algumas, preço ótimo. Os sapatos achei muito surradinhos, não acho que valham a pena.",
       dica: "O Graffiti Alley fica logo atrás.",
-      endereco: "639 Queen St W", maps: "Value Village Boutique 639 Queen St W", foto: "img/valuevillage.jpg", revisar: true
+      endereco: "639 Queen St W", maps: "Value Village Boutique 639 Queen St W", foto: "", revisar: true
     }
   ],
 
