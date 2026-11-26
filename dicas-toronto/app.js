@@ -73,7 +73,7 @@
       ["#lugares", "📍", "Lugares", `${G.lugares.length} passeios`, "c1"],
       ["#comida", "🍽️", "Comida", `${G.comida.length} lugares`, "c3"],
       ["#compras", "🛍️", "Compras", `${G.compras.length} lojas`, "c2"],
-      ["#dicas", "🚇", "Transporte", "Presto e como andar", "c4"],
+      ["#dicas", "🚇", "Transporte", "Como andar pela cidade", "c4"],
       [G.playlist.url, "🎧", "Playlist", "Pra ouvir no trem", "c5"]
     ];
     app.innerHTML = `
@@ -104,8 +104,7 @@
     const t = G.transporte;
     app.innerHTML = `
       <h2>🚇 Transporte</h2>
-      <div class="list"><p style="margin:10px 0 0">Meu cartão Presto (tem saldo!):</p>
-        <div class="presto">${esc(t.presto)}</div>
+      <div class="list">
         <ul>${t.itens.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
       <h2>💡 Dicas e curiosidades (úteis ou não)</h2>
       <div class="list"><ul>${G.dicas.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>

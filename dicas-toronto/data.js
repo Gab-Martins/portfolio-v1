@@ -380,9 +380,7 @@ window.GUIA = {
   ],
 
   transporte: {
-    presto: "[NÚMERO DO PRESTO AQUI]",
     itens: [
-      "Usei o cartão Presto e sobrou saldo. O número está aqui em cima pra você usar.",
       "Pagando com Presto (ou cartão de crédito por aproximação), você tem 2 horas de integração grátis entre metrô, ônibus e bonde.",
       "Cada viagem no TTC custa uns CA$3,35.",
       "Os transportes são limpinhos. Meu favorito foi o streetcar (bonde): muito fofinho, e todos que peguei estavam vazios.",
