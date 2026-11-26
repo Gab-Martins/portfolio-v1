@@ -338,12 +338,12 @@ window.GUIA = {
     {
       id: "ikea", nome: "IKEA Toronto Downtown", nota: 5, emoji: "🕯️",
       opiniao: "Dica muito aleatória, mas fui na IKEA comprar velas aromáticas kkkk. Amo velas e aqui são muito caras; lá encontrei de CA$1 até CA$4 as maiores. Comprei umas 15, não me julgue (AMO VELAS).",
-      endereco: "382 Yonge St", maps: "IKEA Toronto Downtown 382 Yonge St", foto: ""
+      endereco: "382 Yonge St", maps: "IKEA Toronto Downtown 382 Yonge St", foto: "img/ikea.jpg"
     },
     {
       id: "bmv", nome: "BMV Books", nota: 5, emoji: "📖",
       opiniao: "Amei! Livraria com ótimos preços (livros novos e usados). Recomendo muito mais que a Indigo.",
-      endereco: "10 Edward St (perto do Eaton Centre)", maps: "BMV Books 10 Edward St Toronto", foto: ""
+      endereco: "10 Edward St (perto do Eaton Centre)", maps: "BMV Books 10 Edward St Toronto", foto: "img/bmv.jpg", fotoInteira: true
     },
     {
       id: "indigo", nome: "Indigo (Eaton Centre)", nota: 3, emoji: "📕",
