@@ -122,26 +122,26 @@ window.GUIA = {
     },
     {
       id: "graffiti", cat: "gratis", nome: "Graffiti Alley", nota: 0, emoji: "🖌️",
-      opiniao: "[Sua opinião aqui]",
+      opiniao: "",
       curiosidades: [
         "É a Rush Lane, um beco atrás da Queen St W cheio de grafites, pertinho do Value Village Boutique."
       ],
       preco: "Grátis",
-      endereco: "Rush Lane (atrás da Queen St W)", maps: "Graffiti Alley Toronto", foto: "", revisar: true
+      endereco: "Rush Lane (atrás da Queen St W)", maps: "Graffiti Alley Toronto", foto: "img/graffiti.jpg", credito: { texto: "mark.watmough from Toronto, Canada / Wikimedia Commons (CC BY 2.0)", url: "https://commons.wikimedia.org/wiki/File:Graffiti_Alley,_Toronto_(11609067585).jpg" }, revisar: true
     },
     {
       id: "letreiro", cat: "gratis", nome: "Letreiro Toronto (Nathan Phillips Square)", nota: 0, emoji: "🔤",
-      opiniao: "[Sua opinião aqui]",
+      opiniao: "",
       curiosidades: [
         "O letreiro 3D foi instalado em 2015 para os Jogos Pan-Americanos.",
         "No inverno a praça vira pista de patinação no gelo."
       ],
       preco: "Grátis",
-      endereco: "100 Queen St W", maps: "Nathan Phillips Square", foto: "", revisar: true
+      endereco: "100 Queen St W", maps: "Nathan Phillips Square", foto: "img/letreiro.jpg", credito: { texto: "Getfitvi / Wikimedia Commons (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Toronto_150.jpg" }, revisar: true
     },
     {
       id: "stjames", cat: "gratis", nome: "Catedral de St. James", nota: 0, emoji: "⛪",
-      opiniao: "[Sua opinião aqui]",
+      opiniao: "",
       curiosidades: [
         "A congregação é a mais antiga da cidade, de 1797. O prédio atual é a quarta igreja no mesmo terreno e abriu em 1853."
       ],
@@ -332,7 +332,7 @@ window.GUIA = {
     {
       id: "vs", nome: "Victoria's Secret (Eaton Centre)", nota: 4, emoji: "💗",
       opiniao: "Comprei só body splash, tinha promo de 5 por CA$55, e dividi com minha mãe, sogra e amigas, então saiu baratinho. Me deram um cartão de desconto que não pude usar, então é seu! São CA$25 off em compras a partir de CA$75.",
-      cupom: "[CÓDIGO DO CUPOM AQUI]",
+      cupom: "RCC1251014FUEUVC5HL (vale de 2 a 11/dez/2026, só em lojas no Canadá, fora outlet e aeroporto)",
       endereco: "Eaton Centre", maps: "Victoria's Secret Eaton Centre", foto: ""
     },
     {

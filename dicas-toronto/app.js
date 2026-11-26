@@ -31,7 +31,7 @@
       <div class="body">
         <h3>${esc(i.nome)}</h3>
         <div class="meta">${stars(i.nota)}${tags}${i.preco ? `<span>💲 ${esc(i.preco)}</span>` : ""}</div>
-        <p class="op">${esc(i.opiniao)}</p>
+        ${i.opiniao ? `<p class="op">${esc(i.opiniao)}</p>` : ""}
         ${i.dica ? `<div class="box dica"><b>Dica</b>${esc(i.dica)}</div>` : ""}
         ${i.cupom ? `<div class="box cupom">🎟️ ${esc(i.cupom)}</div>` : ""}
         ${curio}
